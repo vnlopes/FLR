@@ -1,6 +1,6 @@
 /**
  * F.L.R. MECÂNICA DIESEL E SOLDA EM GERAL
- * Interactive Portfolio, Mobile Touch UX, Scroll-Write Manifesto & Results Engine
+ * Interactive Portfolio, Rounded Card UI, Mobile Touch UX & Results Engine
  * WhatsApp Oficial: +55 (19) 99791-1326
  */
 
@@ -288,7 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
       isHoverPaused = false;
     });
 
-    // Touch Swipe Support for Mobile
     carouselTrack.addEventListener(
       "touchstart",
       (e) => {
@@ -327,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stepCarousel = (dir) => {
       const slideWidth = carouselTrack.firstElementChild?.getBoundingClientRect().width || 300;
-      carouselOffset += dir * slideWidth;
+      carouselOffset += dir * (slideWidth + 16);
       normalizeCarouselOffset();
       carouselTrack.style.transition = "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)";
       carouselTrack.style.transform = `translate3d(${carouselOffset.toFixed(2)}px, 0, 0)`;
@@ -443,7 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const vh = window.innerHeight;
     const scrollY = window.scrollY;
 
-    // Header state
     if (siteHeader) {
       if (scrollY > 36) {
         siteHeader.classList.add(
@@ -468,7 +466,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Floating bottom emergency CTA on mobile after scrolling past Hero
     if (mobileFloatingBar) {
       if (scrollY > vh * 0.65) {
         mobileFloatingBar.classList.remove("translate-y-full", "opacity-0", "pointer-events-none");
@@ -479,7 +476,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Parallax on desktop
     if (window.innerWidth >= 768) {
       parallaxElements.forEach((el) => {
         const speed = parseFloat(el.getAttribute("data-parallax")) || 0.1;
@@ -516,11 +512,11 @@ document.addEventListener("DOMContentLoaded", () => {
     col.addEventListener("click", (e) => {
       if (e.target.closest("a, [data-spec-trigger]")) return;
       const isExpanded = col.classList.toggle("is-expanded");
-      const mobileHintText = col.querySelector(".mobile-tap-hint");
+      const mobileHintText = col.querySelector(".prompt-copy-mobile");
       if (mobileHintText) {
         mobileHintText.textContent = isExpanded
           ? "Ocultar serviços ↑"
-          : "Toque para detalhar ↓";
+          : "Toque para ver os serviços ↓";
       }
     });
   });
@@ -578,8 +574,8 @@ document.addEventListener("DOMContentLoaded", () => {
     modalList.innerHTML = data.items
       .map(
         (item) => `
-        <li class="flex items-start gap-3 py-2.5 border-b border-[#DFDFDD] last:border-none text-sm md:text-base text-[#1A1A1A]">
-          <span class="mt-1.5 w-2 h-2 bg-[#FE5502] shrink-0"></span>
+        <li class="flex items-start gap-3 p-3 rounded-xl bg-[#F4F4F2] border border-[#E5E5E3] text-xs sm:text-sm text-[#1A1A1A]">
+          <span class="mt-1 w-2 h-2 rounded-full bg-[#FE5502] shrink-0"></span>
           <span>${item}</span>
         </li>`
       )
@@ -620,7 +616,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("click", (e) => {
-    // Ignore click if user was swiping the carousel on touch device
     if (touchMovedDistance > 10) {
       touchMovedDistance = 0;
       return;
