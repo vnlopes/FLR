@@ -1,6 +1,6 @@
 /**
  * F.L.R. MECÂNICA DIESEL E SOLDA EM GERAL
- * Interactive Portfolio, Scroll-Write Manifesto, Infinite Carousel & Results Engine
+ * Interactive Portfolio, Mobile Touch UX, Scroll-Write Manifesto & Results Engine
  * WhatsApp Oficial: +55 (19) 99791-1326
  */
 
@@ -146,8 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.12,
-        rootMargin: "-3% 0px -5% 0px"
+        threshold: 0.1,
+        rootMargin: "-2% 0px -4% 0px"
       }
     );
 
@@ -204,10 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = historiaSection.getBoundingClientRect();
     const vh = window.innerHeight;
 
-    // Start writing when the top of #historia enters 82% of viewport height
-    // Finish writing when the top reaches 22% of viewport height
-    const startY = vh * 0.82;
-    const endY = vh * 0.18;
+    const isMobile = window.innerWidth < 768;
+    const startY = vh * (isMobile ? 0.86 : 0.82);
+    const endY = vh * (isMobile ? 0.24 : 0.18);
     const rawProgress = (startY - rect.top) / (startY - endY);
     const progress = Math.max(0, Math.min(1, rawProgress));
 
@@ -236,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // 3. CONTINUOUS AUTO-SCROLLING GALLERY CAROUSEL (5 REAL PHOTOS + CONTROLS)
+  // 3. CONTINUOUS AUTO-SCROLLING CAROUSEL + MOBILE TOUCH SWIPE SUPPORT
   // ==========================================================================
   const carouselTrack = document.getElementById("gallery-carousel-track");
   const prevBtn = document.getElementById("carousel-prev");
@@ -245,12 +244,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleLabel = document.getElementById("carousel-toggle-label");
 
   let carouselOffset = 0;
-  let carouselSpeed = 0.75; // px per frame
+  let carouselSpeed = 0.7;
   let isCarouselPaused = false;
   let isHoverPaused = false;
+  let isTouchDragging = false;
+  let touchStartX = 0;
+  let touchLastX = 0;
+  let touchMovedDistance = 0;
 
   if (carouselTrack) {
-    // Clone original slides once for seamless infinite loop
     const originalSlides = Array.from(carouselTrack.children);
     originalSlides.forEach((slide) => {
       const clone = slide.cloneNode(true);
@@ -258,13 +260,20 @@ document.addEventListener("DOMContentLoaded", () => {
       carouselTrack.appendChild(clone);
     });
 
+    function normalizeCarouselOffset() {
+      const halfWidth = carouselTrack.scrollWidth / 2;
+      if (halfWidth <= 0) return;
+      if (carouselOffset > 0) {
+        carouselOffset -= halfWidth;
+      } else if (Math.abs(carouselOffset) >= halfWidth) {
+        carouselOffset += halfWidth;
+      }
+    }
+
     function animateCarousel() {
-      if (!isCarouselPaused && !isHoverPaused) {
+      if (!isCarouselPaused && !isHoverPaused && !isTouchDragging) {
         carouselOffset -= carouselSpeed;
-        const halfWidth = carouselTrack.scrollWidth / 2;
-        if (halfWidth > 0 && Math.abs(carouselOffset) >= halfWidth) {
-          carouselOffset += halfWidth;
-        }
+        normalizeCarouselOffset();
         carouselTrack.style.transform = `translate3d(${carouselOffset.toFixed(2)}px, 0, 0)`;
       }
       window.requestAnimationFrame(animateCarousel);
@@ -279,15 +288,47 @@ document.addEventListener("DOMContentLoaded", () => {
       isHoverPaused = false;
     });
 
+    // Touch Swipe Support for Mobile
+    carouselTrack.addEventListener(
+      "touchstart",
+      (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+        isTouchDragging = true;
+        touchStartX = e.touches[0].clientX;
+        touchLastX = touchStartX;
+        touchMovedDistance = 0;
+        carouselTrack.style.transition = "";
+      },
+      { passive: true }
+    );
+
+    carouselTrack.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isTouchDragging || !e.touches || e.touches.length === 0) return;
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - touchLastX;
+        touchMovedDistance += Math.abs(deltaX);
+        touchLastX = currentX;
+        carouselOffset += deltaX;
+        normalizeCarouselOffset();
+        carouselTrack.style.transform = `translate3d(${carouselOffset.toFixed(2)}px, 0, 0)`;
+      },
+      { passive: true }
+    );
+
+    carouselTrack.addEventListener(
+      "touchend",
+      () => {
+        isTouchDragging = false;
+      },
+      { passive: true }
+    );
+
     const stepCarousel = (dir) => {
-      const slideWidth = carouselTrack.firstElementChild?.getBoundingClientRect().width || 420;
-      const halfWidth = carouselTrack.scrollWidth / 2;
+      const slideWidth = carouselTrack.firstElementChild?.getBoundingClientRect().width || 300;
       carouselOffset += dir * slideWidth;
-      if (carouselOffset > 0) {
-        carouselOffset -= halfWidth;
-      } else if (Math.abs(carouselOffset) >= halfWidth) {
-        carouselOffset += halfWidth;
-      }
+      normalizeCarouselOffset();
       carouselTrack.style.transition = "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)";
       carouselTrack.style.transform = `translate3d(${carouselOffset.toFixed(2)}px, 0, 0)`;
       setTimeout(() => {
@@ -301,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleBtn.addEventListener("click", () => {
         isCarouselPaused = !isCarouselPaused;
         if (toggleLabel) {
-          toggleLabel.textContent = isCarouselPaused ? "Retomar rolagem ▶" : "Pausar rolagem ❚❚";
+          toggleLabel.textContent = isCarouselPaused ? "Retomar ▶" : "Pausar ❚❚";
         }
       });
     }
@@ -325,13 +366,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const duration = 1400;
+      const duration = 1300;
       const startTime = performance.now();
 
       function tick(now) {
         const elapsed = now - startTime;
         const t = Math.min(1, elapsed / duration);
-        // Ease out quart
         const eased = 1 - Math.pow(1 - t, 4);
         const current = Math.round(eased * target);
         el.textContent = `${prefix}${current}${suffix}`;
@@ -358,14 +398,13 @@ document.addEventListener("DOMContentLoaded", () => {
           animateCounters(entry.isIntersecting);
         });
       },
-      { threshold: 0.22 }
+      { threshold: 0.15 }
     );
     resultsObserver.observe(resultsSection);
   } else {
     animateCounters(true);
   }
 
-  // Interactive Downtime Comparison Switcher inside #resultados
   const scenarioBtns = document.querySelectorAll("[data-scenario-btn]");
   const scenTrad = document.getElementById("scen-trad");
   const scenFlr = document.getElementById("scen-flr");
@@ -393,22 +432,65 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================================================
-  // 5. SUBTLE SCROLL PARALLAX & SCROLL HANDLER
+  // 5. SUBTLE SCROLL PARALLAX, STICKY HEADER & MOBILE FLOATING BAR
   // ==========================================================================
   const parallaxElements = document.querySelectorAll("[data-parallax]");
+  const siteHeader = document.getElementById("site-header");
+  const mobileFloatingBar = document.getElementById("mobile-floating-cta");
   let ticking = false;
 
   function onScrollFrame() {
     const vh = window.innerHeight;
-    parallaxElements.forEach((el) => {
-      const speed = parseFloat(el.getAttribute("data-parallax")) || 0.12;
-      const rect = el.parentElement.getBoundingClientRect();
-      if (rect.bottom > 0 && rect.top < vh) {
-        const centerOffset = (rect.top + rect.height / 2 - vh / 2) / vh;
-        const translateY = centerOffset * speed * 130;
-        el.style.transform = `scale(1.08) translate3d(0, ${translateY.toFixed(1)}px, 0)`;
+    const scrollY = window.scrollY;
+
+    // Header state
+    if (siteHeader) {
+      if (scrollY > 36) {
+        siteHeader.classList.add(
+          "bg-[#0A0A0A]/95",
+          "backdrop-blur-md",
+          "border-b",
+          "border-white/10",
+          "py-3.5",
+          "sm:py-4"
+        );
+        siteHeader.classList.remove("py-5", "sm:py-7");
+      } else {
+        siteHeader.classList.remove(
+          "bg-[#0A0A0A]/95",
+          "backdrop-blur-md",
+          "border-b",
+          "border-white/10",
+          "py-3.5",
+          "sm:py-4"
+        );
+        siteHeader.classList.add("py-5", "sm:py-7");
       }
-    });
+    }
+
+    // Floating bottom emergency CTA on mobile after scrolling past Hero
+    if (mobileFloatingBar) {
+      if (scrollY > vh * 0.65) {
+        mobileFloatingBar.classList.remove("translate-y-full", "opacity-0", "pointer-events-none");
+        mobileFloatingBar.classList.add("translate-y-0", "opacity-100");
+      } else {
+        mobileFloatingBar.classList.add("translate-y-full", "opacity-0", "pointer-events-none");
+        mobileFloatingBar.classList.remove("translate-y-0", "opacity-100");
+      }
+    }
+
+    // Parallax on desktop
+    if (window.innerWidth >= 768) {
+      parallaxElements.forEach((el) => {
+        const speed = parseFloat(el.getAttribute("data-parallax")) || 0.1;
+        const rect = el.parentElement.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < vh) {
+          const centerOffset = (rect.top + rect.height / 2 - vh / 2) / vh;
+          const translateY = centerOffset * speed * 120;
+          el.style.transform = `scale(1.06) translate3d(0, ${translateY.toFixed(1)}px, 0)`;
+        }
+      });
+    }
 
     updateScrollTypewriter();
     ticking = false;
@@ -427,63 +509,51 @@ document.addEventListener("DOMContentLoaded", () => {
   onScrollFrame();
 
   // ==========================================================================
-  // 6. TOUCH / CLICK SUPPORT FOR EDITORIAL HOVER COLUMNS (MOTORES & 360º)
+  // 6. TOUCH / CLICK ACCORDION FOR EDITORIAL HOVER COLUMNS (MOTORES & 360º)
   // ==========================================================================
   const editorialCols = document.querySelectorAll(".editorial-spec-col");
   editorialCols.forEach((col) => {
     col.addEventListener("click", (e) => {
       if (e.target.closest("a, [data-spec-trigger]")) return;
-      col.classList.toggle("is-expanded");
+      const isExpanded = col.classList.toggle("is-expanded");
+      const mobileHintText = col.querySelector(".mobile-tap-hint");
+      if (mobileHintText) {
+        mobileHintText.textContent = isExpanded
+          ? "Ocultar serviços ↑"
+          : "Toque para detalhar ↓";
+      }
     });
   });
 
   // ==========================================================================
-  // 7. MOBILE NAVIGATION TOGGLE & STICKY HEADER
+  // 7. MOBILE NAVIGATION DRAWER TOGGLE
   // ==========================================================================
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
+  const menuIconOpen = document.getElementById("menu-icon-open");
+  const menuIconClose = document.getElementById("menu-icon-close");
   const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+  function setMobileMenuState(open) {
+    if (!mobileMenuBtn || !mobileMenu) return;
+    mobileMenuBtn.setAttribute("aria-expanded", String(open));
+    mobileMenu.classList.toggle("hidden", !open);
+    if (menuIconOpen && menuIconClose) {
+      menuIconOpen.classList.toggle("hidden", open);
+      menuIconClose.classList.toggle("hidden", !open);
+    }
+  }
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
       const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
-      mobileMenuBtn.setAttribute("aria-expanded", String(!isExpanded));
-      mobileMenu.classList.toggle("hidden");
+      setMobileMenuState(!isExpanded);
     });
 
     mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenuBtn.setAttribute("aria-expanded", "false");
-        mobileMenu.classList.add("hidden");
-      });
+      link.addEventListener("click", () => setMobileMenuState(false));
     });
   }
-
-  const siteHeader = document.getElementById("site-header");
-  const handleHeaderScroll = () => {
-    if (!siteHeader) return;
-    if (window.scrollY > 48) {
-      siteHeader.classList.add(
-        "bg-[#0A0A0A]/95",
-        "backdrop-blur-md",
-        "border-b",
-        "border-white/10",
-        "py-4"
-      );
-      siteHeader.classList.remove("py-7");
-    } else {
-      siteHeader.classList.remove(
-        "bg-[#0A0A0A]/95",
-        "backdrop-blur-md",
-        "border-b",
-        "border-white/10",
-        "py-4"
-      );
-      siteHeader.classList.add("py-7");
-    }
-  };
-  window.addEventListener("scroll", handleHeaderScroll, { passive: true });
-  handleHeaderScroll();
 
   // ==========================================================================
   // 8. TECHNICAL SPEC MODAL & LIGHTBOX CONTROLLERS
@@ -549,8 +619,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  // Delegate click on gallery items (so cloned carousel slides also open lightbox!)
   document.addEventListener("click", (e) => {
+    // Ignore click if user was swiping the carousel on touch device
+    if (touchMovedDistance > 10) {
+      touchMovedDistance = 0;
+      return;
+    }
     const item = e.target.closest("[data-gallery-item]");
     if (!item) return;
     const src = item.getAttribute("data-src");

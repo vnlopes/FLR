@@ -1,5 +1,5 @@
 /* ==========================================================================
-   F.L.R. MECÂNICA DIESEL E SOLDA EM GERAL — Design System, Motion & Hover UI
+   F.L.R. MECÂNICA DIESEL E SOLDA EM GERAL — Design System, Motion & Mobile UI
    Palette: #FE5502 (Orange) | #0A0A0A (Black) | #FFFFFF (White)
    Zero Red Policy (#000 / #FFF / #FE5502 strictly enforced)
    ========================================================================== */
@@ -18,6 +18,7 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -25,6 +26,8 @@ html {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--flr-white);
   color: var(--flr-black);
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -37,6 +40,24 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Hide scrollbar for horizontal pill scrollers on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Prevent iOS Safari auto-zoom on form fields (<16px triggers zoom on iOS) */
+@media (max-width: 639px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 /* Native 1:1 High-Clarity Video Rendering for Hero Section */
 .hero-video-crisp {
   transform: none !important;
@@ -47,30 +68,45 @@ body {
   image-rendering: -webkit-optimize-contrast;
 }
 
+@media (max-width: 767px) {
+  /* Avoid heavy SVG convolution filter on mobile GPUs for 60fps battery-friendly playback */
+  .hero-video-crisp {
+    filter: contrast(1.05) saturate(1.05);
+  }
+}
+
 /* ==========================================================================
    1. BIDIRECTIONAL ENTRANCE & EXIT ANIMATIONS (Sections, Text & Images)
    ========================================================================== */
 
 [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 32px, 0);
   transition:
-    opacity 0.72s var(--ease-out-expo),
-    transform 0.72s var(--ease-out-expo);
+    opacity 0.68s var(--ease-out-expo),
+    transform 0.68s var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
 
 [data-reveal="left"] {
-  transform: translate3d(-44px, 0, 0);
+  transform: translate3d(-36px, 0, 0);
 }
 
 [data-reveal="right"] {
-  transform: translate3d(44px, 0, 0);
+  transform: translate3d(36px, 0, 0);
 }
 
 [data-reveal="scale"] {
-  transform: scale(0.93) translate3d(0, 24px, 0);
+  transform: scale(0.94) translate3d(0, 20px, 0);
+}
+
+@media (max-width: 767px) {
+  /* Softer vertical shifts on narrow mobile viewports to prevent horizontal jank */
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    transform: translate3d(0, 26px, 0);
+  }
 }
 
 [data-reveal].is-inview {
@@ -80,28 +116,28 @@ body {
 
 [data-reveal].is-exited-top {
   opacity: 0;
-  transform: translate3d(0, -32px, 0) scale(0.98);
+  transform: translate3d(0, -24px, 0) scale(0.98);
 }
 
 [data-reveal].is-exited-bottom {
   opacity: 0;
-  transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 32px, 0);
 }
 
 /* Image Frame Entrance & Exit */
 [data-reveal-img] {
-  clip-path: inset(6% 3% 6% 3%);
+  clip-path: inset(5% 2% 5% 2%);
   opacity: 0;
   transition:
-    clip-path 0.9s var(--ease-out-expo),
-    opacity 0.6s ease;
+    clip-path 0.85s var(--ease-out-expo),
+    opacity 0.55s ease;
   transition-delay: var(--reveal-delay, 0ms);
   will-change: clip-path, opacity;
 }
 
 [data-reveal-img] img {
-  transform: scale(1.1);
-  transition: transform 1.15s var(--ease-out-expo);
+  transform: scale(1.08);
+  transition: transform 1.1s var(--ease-out-expo);
 }
 
 [data-reveal-img].is-inview {
@@ -114,31 +150,31 @@ body {
 }
 
 [data-reveal-img].is-exited-top {
-  clip-path: inset(0% 0% 8% 0%);
-  opacity: 0.15;
+  clip-path: inset(0% 0% 6% 0%);
+  opacity: 0.2;
 }
 
 [data-reveal-img].is-exited-top img {
-  transform: scale(1.06) translateY(-14px);
+  transform: scale(1.05) translateY(-10px);
 }
 
 [data-reveal-img].is-exited-bottom {
-  clip-path: inset(8% 0% 0% 0%);
+  clip-path: inset(6% 0% 0% 0%);
   opacity: 0;
 }
 
 [data-reveal-img].is-exited-bottom img {
-  transform: scale(1.1) translateY(14px);
+  transform: scale(1.08) translateY(10px);
 }
 
 /* Cutout Machine Floating & Entrance (001 / 002 / 003) */
 [data-reveal-cutout] {
   opacity: 0;
-  transform: translate3d(0, 48px, 0) scale(0.88);
+  transform: translate3d(0, 36px, 0) scale(0.9);
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.04));
   transition:
-    opacity 0.85s var(--ease-out-expo),
-    transform 0.85s var(--ease-out-expo),
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo),
     filter 0.5s ease;
   transition-delay: var(--reveal-delay, 0ms);
 }
@@ -146,21 +182,21 @@ body {
 [data-reveal-cutout].is-inview {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
-  filter: drop-shadow(0 24px 28px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.12));
 }
 
 [data-reveal-cutout].is-exited-top {
   opacity: 0;
-  transform: translate3d(0, -36px, 0) scale(0.92);
+  transform: translate3d(0, -28px, 0) scale(0.94);
 }
 
 [data-reveal-cutout].is-exited-bottom {
   opacity: 0;
-  transform: translate3d(0, 48px, 0) scale(0.88);
+  transform: translate3d(0, 36px, 0) scale(0.9);
 }
 
 /* ==========================================================================
-   2. VIEWPORT-FITTING SPLIT SECTIONS & HOVER SERVICE BREAKDOWN
+   2. VIEWPORT-FITTING SPLIT SECTIONS & HOVER/TAP SERVICE BREAKDOWN
    ========================================================================== */
 
 @media (min-width: 1024px) {
@@ -187,7 +223,7 @@ body {
   .vertical-editorial-title {
     writing-mode: horizontal-tb;
     transform: none;
-    line-height: 1.05;
+    line-height: 1.02;
   }
 }
 
@@ -212,46 +248,83 @@ body {
   z-index: 30;
 }
 
-.editorial-spec-col:hover::before,
-.editorial-spec-col.is-expanded::before {
-  transform: scaleX(1);
-}
-
 .editorial-rest-state {
   transition:
     opacity 0.35s var(--ease-out-expo),
     transform 0.4s var(--ease-out-expo);
 }
 
-.editorial-spec-col:hover .editorial-rest-state,
-.editorial-spec-col.is-expanded .editorial-rest-state {
-  opacity: 0.05;
-  transform: translateX(-14px) scale(0.97);
-  pointer-events: none;
-}
+/* DESKTOP HOVER BEHAVIOR (>= 1024px) */
+@media (min-width: 1024px) {
+  .editorial-spec-col:hover::before,
+  .editorial-spec-col.is-expanded::before {
+    transform: scaleX(1);
+  }
 
-.editorial-hover-details {
-  position: absolute;
-  inset: 0;
-  padding: 1.5rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.95) 65%,
-    rgba(255, 255, 255, 0.99) 100%
-  );
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  transform: translate3d(0, 18px, 0);
-  transition:
-    opacity 0.4s var(--ease-out-expo),
-    transform 0.4s var(--ease-out-expo);
-  z-index: 20;
-  overflow-y: auto;
+  .editorial-spec-col:hover .editorial-rest-state,
+  .editorial-spec-col.is-expanded .editorial-rest-state {
+    opacity: 0.05;
+    transform: translateX(-14px) scale(0.97);
+    pointer-events: none;
+  }
+
+  .editorial-hover-details {
+    position: absolute;
+    inset: 0;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.95) 65%,
+      rgba(255, 255, 255, 0.99) 100%
+    );
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 0.4s var(--ease-out-expo),
+      transform 0.4s var(--ease-out-expo);
+    z-index: 20;
+    overflow-y: auto;
+  }
+
+  .editorial-spec-col:hover .editorial-hover-details,
+  .editorial-spec-col.is-expanded .editorial-hover-details {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .service-detail-item {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+    transition:
+      opacity 0.4s var(--ease-out-expo),
+      transform 0.4s var(--ease-out-expo),
+      border-color 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .editorial-spec-col:hover .service-detail-item,
+  .editorial-spec-col.is-expanded .service-detail-item {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .editorial-spec-col:hover .service-detail-item:nth-child(1),
+  .editorial-spec-col.is-expanded .service-detail-item:nth-child(1) { transition-delay: 45ms; }
+  .editorial-spec-col:hover .service-detail-item:nth-child(2),
+  .editorial-spec-col.is-expanded .service-detail-item:nth-child(2) { transition-delay: 90ms; }
+  .editorial-spec-col:hover .service-detail-item:nth-child(3),
+  .editorial-spec-col.is-expanded .service-detail-item:nth-child(3) { transition-delay: 135ms; }
+  .editorial-spec-col:hover .service-detail-item:nth-child(4),
+  .editorial-spec-col.is-expanded .service-detail-item:nth-child(4) { transition-delay: 180ms; }
+  .editorial-spec-col:hover .service-detail-item:nth-child(5),
+  .editorial-spec-col.is-expanded .service-detail-item:nth-child(5) { transition-delay: 225ms; }
 }
 
 @media (min-width: 1280px) {
@@ -260,39 +333,43 @@ body {
   }
 }
 
-.editorial-spec-col:hover .editorial-hover-details,
-.editorial-spec-col.is-expanded .editorial-hover-details {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate3d(0, 0, 0);
+/* MOBILE & TABLET ACCORDION / EXPANDABLE FLOW (< 1024px)
+   Prevents clipping on touch screens and lets the user expand/collapse cleanly */
+@media (max-width: 1023px) {
+  .editorial-spec-col.is-expanded::before {
+    transform: scaleX(1);
+  }
+
+  .editorial-hover-details {
+    display: none;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--flr-border);
+    animation: mobileSlideDown 0.35s var(--ease-out-expo) forwards;
+  }
+
+  .editorial-spec-col.is-expanded .editorial-hover-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .service-detail-item {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.service-detail-item {
-  opacity: 0;
-  transform: translate3d(0, 12px, 0);
-  transition:
-    opacity 0.4s var(--ease-out-expo),
-    transform 0.4s var(--ease-out-expo),
-    border-color 0.25s ease,
-    background-color 0.25s ease;
+@keyframes mobileSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.editorial-spec-col:hover .service-detail-item,
-.editorial-spec-col.is-expanded .service-detail-item {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.editorial-spec-col:hover .service-detail-item:nth-child(1),
-.editorial-spec-col.is-expanded .service-detail-item:nth-child(1) { transition-delay: 45ms; }
-.editorial-spec-col:hover .service-detail-item:nth-child(2),
-.editorial-spec-col.is-expanded .service-detail-item:nth-child(2) { transition-delay: 90ms; }
-.editorial-spec-col:hover .service-detail-item:nth-child(3),
-.editorial-spec-col.is-expanded .service-detail-item:nth-child(3) { transition-delay: 135ms; }
-.editorial-spec-col:hover .service-detail-item:nth-child(4),
-.editorial-spec-col.is-expanded .service-detail-item:nth-child(4) { transition-delay: 180ms; }
-.editorial-spec-col:hover .service-detail-item:nth-child(5),
-.editorial-spec-col.is-expanded .service-detail-item:nth-child(5) { transition-delay: 225ms; }
 
 .service-detail-item:hover {
   background-color: #F7F7F5;
@@ -318,6 +395,14 @@ body {
   transition:
     opacity 0.4s var(--ease-out-expo),
     transform 0.4s var(--ease-out-expo);
+}
+
+@media (max-width: 1023px) {
+  /* Always show the photo caption badge on mobile since there is no hover */
+  .editorial-photo-badge {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ==========================================================================
@@ -362,13 +447,14 @@ body {
 }
 
 /* ==========================================================================
-   4. CONTINUOUS AUTO-SCROLLING CAROUSEL (5 REAL PHOTOS + CONTROLS)
+   4. CONTINUOUS AUTO-SCROLLING CAROUSEL (TOUCH SWIPE + MARQUEE)
    ========================================================================== */
 
 .carousel-viewport {
   overflow: hidden;
   position: relative;
   user-select: none;
+  touch-action: pan-y;
 }
 
 .carousel-track {
@@ -403,11 +489,23 @@ body {
 .hero-vignette {
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.52) 38%,
-    rgba(0, 0, 0, 0.18) 68%,
-    rgba(0, 0, 0, 0.08) 100%
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.56) 42%,
+    rgba(0, 0, 0, 0.22) 72%,
+    rgba(0, 0, 0, 0.1) 100%
   );
+}
+
+@media (max-width: 767px) {
+  /* Stronger vertical + full vignette on mobile so white/orange text is 100% legible over video */
+  .hero-vignette {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.58) 45%,
+      rgba(0, 0, 0, 0.84) 100%
+    );
+  }
 }
 
 .hero-top-vignette {
