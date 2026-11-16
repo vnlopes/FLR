@@ -37,8 +37,8 @@
     };
   </script>
 
-  <!-- Custom Architectural & Motion Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Custom Architectural & Motion Styles (Cache-busted) -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261116c" />
 </head>
 <body class="bg-[#F4F4F2] text-[#0A0A0A] selection:bg-[#FE5502] selection:text-white pb-16 md:pb-0">
 
@@ -230,9 +230,8 @@
     <section id="servicos" class="w-full bg-[#F4F4F2] py-10 sm:py-16 px-4 sm:px-6 lg:px-10">
       <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-7">
         
-        <!-- PILLAR 001 (Rounded Card + Top Floating Widget) -->
+        <!-- PILLAR 001 -->
         <article class="pillar-card rounded-[24px] sm:rounded-[28px] bg-white border border-[#DFDFDD] p-5 sm:p-7 xl:p-8 flex flex-col justify-between sm:min-h-[580px] xl:min-h-[640px] shadow-sm">
-          <!-- Top Rounded Status Widget -->
           <div data-reveal style="--reveal-delay: 0ms" class="rounded-[18px] bg-[#F6F6F4] border border-[#E5E5E3] p-3.5 sm:p-4 flex items-center justify-between gap-2">
             <span class="inline-flex items-center gap-2 text-xs font-semibold text-[#0A0A0A]">
               <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
@@ -277,9 +276,8 @@
           </div>
         </article>
 
-        <!-- PILLAR 002 (Rounded Card + Top Floating Widget) -->
+        <!-- PILLAR 002 -->
         <article class="pillar-card rounded-[24px] sm:rounded-[28px] bg-white border border-[#DFDFDD] p-5 sm:p-7 xl:p-8 flex flex-col justify-between sm:min-h-[580px] xl:min-h-[640px] shadow-sm">
-          <!-- Top Rounded Status Widget -->
           <div data-reveal style="--reveal-delay: 100ms" class="rounded-[18px] bg-[#F6F6F4] border border-[#E5E5E3] p-3.5 sm:p-4 flex items-center justify-between gap-2">
             <span class="inline-flex items-center gap-2 text-xs font-semibold text-[#0A0A0A]">
               <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
@@ -324,9 +322,8 @@
           </div>
         </article>
 
-        <!-- PILLAR 003 (Rounded Card + Top Floating Widget) -->
+        <!-- PILLAR 003 -->
         <article class="pillar-card rounded-[24px] sm:rounded-[28px] bg-white border border-[#DFDFDD] p-5 sm:p-7 xl:p-8 flex flex-col justify-between sm:min-h-[580px] xl:min-h-[640px] shadow-sm">
-          <!-- Top Rounded Status Widget -->
           <div data-reveal style="--reveal-delay: 180ms" class="rounded-[18px] bg-[#F6F6F4] border border-[#E5E5E3] p-3.5 sm:p-4 flex items-center justify-between gap-2">
             <span class="inline-flex items-center gap-2 text-xs font-semibold text-[#0A0A0A]">
               <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
@@ -408,8 +405,8 @@
 
     <!-- ======================================================================
          EDITORIAL SPLIT 01: MOTORES & TRANSMISSÃO (Rounded Split Card)
-         Desktop: "Passe o mouse para detalhar"
-         Mobile/Touch: "Toque para ver os serviços ↓" (Zero duplicate title)
+         Desktop (lg): Hover over white column ("Passe o mouse para detalhar")
+         Mobile (< lg): Uncrowded stacked layout + Full-width "Clique para ver os detalhes" button
          ====================================================================== -->
     <section id="motores-transmissao" class="editorial-split-row w-full px-4 sm:px-6 lg:px-10 pb-6 sm:pb-10 bg-[#F4F4F2]">
       <div class="max-w-[1800px] mx-auto rounded-[24px] sm:rounded-[28px] overflow-hidden bg-white border border-[#DFDFDD] shadow-sm grid grid-cols-1 lg:grid-cols-12 viewport-split-section">
@@ -417,15 +414,14 @@
         <!-- Left 8 Cols (66.6%): F.L.R. Mechanic Working on Diesel Engine -->
         <div
           data-reveal-img
-          class="editorial-photo-wrap lg:col-span-8 relative h-[250px] sm:h-[380px] lg:h-full bg-[#0A0A0A] overflow-hidden"
+          class="editorial-photo-wrap lg:col-span-8 relative h-[240px] sm:h-[360px] lg:h-full bg-[#0A0A0A] overflow-hidden"
         >
           <img
             src="assets/img/split-motores-flr.jpg"
             alt="Mecânico da F.L.R. Mecânica Diesel trabalhando no cabeçote de motor diesel"
             class="w-full h-full object-cover object-center transition-all duration-700"
           />
-          <!-- Floating Glassmorphic Badge matching Setores Card Style -->
-          <div class="editorial-photo-badge absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto rounded-[18px] bg-black/50 backdrop-blur-md border border-white/25 px-4 py-3 sm:px-5 sm:py-4 text-white max-w-md pointer-events-none shadow-lg">
+          <div class="editorial-photo-badge hidden sm:block absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto rounded-[18px] bg-black/50 backdrop-blur-md border border-white/25 px-4 py-3 sm:px-5 sm:py-4 text-white max-w-md pointer-events-none shadow-lg">
             <div class="flex items-center justify-between gap-3">
               <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white">
                 <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
@@ -444,41 +440,56 @@
         <!-- Right 4 Cols (33.3%): Interactive White Column -->
         <div
           data-reveal="right"
-          class="editorial-spec-col lg:col-span-4 p-5 sm:p-8 xl:p-10 flex flex-col justify-between lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD] cursor-pointer"
+          class="editorial-spec-col lg:col-span-4 p-6 sm:p-8 xl:p-10 flex flex-col justify-between lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD] cursor-pointer"
           aria-label="Motores e Transmissão — veja o detalhamento dos serviços"
         >
           <!-- DEFAULT REST STATE -->
-          <div class="editorial-rest-state flex flex-col justify-between h-full gap-4 lg:gap-0">
-            <!-- Top Row: Desktop Title / Mobile Category Tag + Context-Aware Prompt Pill -->
-            <div class="flex items-center justify-between gap-2">
-              <h3 class="hidden lg:block text-lg sm:text-[21px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A] uppercase">
+          <div class="editorial-rest-state flex flex-col justify-between h-full">
+            
+            <!-- DESKTOP-ONLY TOP ROW (Hidden on Mobile via Tailwind `hidden lg:flex`) -->
+            <div class="hidden lg:flex items-start justify-between gap-3">
+              <h3 class="text-lg xl:text-[21px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A] uppercase">
                 MOTORES &amp;<br />TRANSMISSÃO
               </h3>
-              <span class="lg:hidden inline-flex items-center gap-1.5 text-xs font-bold text-[#6E6E6E] uppercase tracking-wider">
-                <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
-                Especialidade #01
-              </span>
-
-              <!-- Automatic Desktop ("Passe o mouse") vs Mobile ("Toque para ver os serviços ↓") Pill -->
-              <span class="inline-flex items-center gap-2 bg-[#F4F4F2] border border-[#DFDFDD] text-[#0A0A0A] text-[11px] sm:text-xs font-semibold px-3.5 py-2 rounded-full shrink-0 shadow-2xs">
+              <span class="inline-flex items-center gap-2 bg-[#F4F4F2] border border-[#DFDFDD] text-[#0A0A0A] text-xs font-semibold px-3.5 py-2 rounded-full shrink-0">
                 <span class="w-2 h-2 rounded-full bg-[#FE5502] animate-ping"></span>
-                <span class="prompt-copy-desktop">Passe o mouse para detalhar</span>
-                <span class="prompt-copy-mobile">Toque para ver os serviços ↓</span>
+                <span>Passe o mouse para detalhar</span>
               </span>
             </div>
 
-            <!-- Main Display Title (Vertical on Desktop, Clean Single Headline on Mobile) -->
+            <!-- MOBILE-ONLY EYEBROW TAG (Spacious & Uncrowded) -->
+            <div class="lg:hidden flex items-center justify-between mb-3">
+              <span class="inline-flex items-center gap-2 text-xs font-bold text-[#6E6E6E] uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
+                Especialidade #01 · Trem de Força
+              </span>
+            </div>
+
+            <!-- Main Display Title -->
             <div class="my-1 lg:my-0 flex items-center justify-start">
-              <span class="vertical-editorial-title text-[26px] sm:text-[34px] xl:text-[42px] font-bold text-[#0A0A0A] uppercase">
+              <span class="vertical-editorial-title text-[28px] sm:text-[34px] xl:text-[42px] font-bold text-[#0A0A0A] uppercase">
                 MOTORES &amp;<br />TRANSMISSÃO
               </span>
             </div>
 
-            <div>
-              <p class="text-xs sm:text-[14px] text-[#6E6E6E] font-body leading-[1.45] max-w-[42ch]">
+            <!-- Description + Mobile Full-Width "Clique para ver os detalhes" Button -->
+            <div class="mt-3 lg:mt-0">
+              <p class="text-sm sm:text-[14px] text-[#6E6E6E] font-body leading-[1.5] max-w-[42ch]">
                 Retífica e manutenção de motores diesel, revisão de câmbio, diferencial e diagnóstico eletrônico de precisão. Identificamos a falha exata sem tentativas cegas, garantindo agilidade e custo justo em cada reparo.
               </p>
+
+              <!-- MOBILE-ONLY FULL-WIDTH BUTTON -->
+              <div class="lg:hidden mt-5 w-full py-3.5 px-4 rounded-2xl bg-[#F4F4F2] active:bg-[#EAEAE6] border border-[#DFDFDD] flex items-center justify-between gap-3">
+                <span class="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#0A0A0A]">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#FE5502] animate-pulse shrink-0"></span>
+                  <span class="mobile-click-label">Clique para ver os detalhes</span>
+                </span>
+                <span class="mobile-click-arrow w-7 h-7 rounded-full bg-white border border-[#DFDFDD] flex items-center justify-center text-xs font-bold text-[#FE5502] shrink-0">
+                  ↓
+                </span>
+              </div>
             </div>
+
           </div>
 
           <!-- HOVER / MOBILE EXPANDED STATE: ROUNDED SERVICE SUB-CARDS -->
@@ -500,38 +511,38 @@
                 </button>
               </div>
 
-              <div class="mt-3 space-y-1.5">
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+              <div class="mt-3 space-y-2">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">01. Retífica e Manutenção de Motores Diesel</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Retífica completa e parcial: cabeçote, bloco, camisas, pistões, bronzinas e regulagem de válvulas.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">02. Diagnóstico Eletrônico de Precisão</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Scanner computadorizado multimarcas, leitura em tempo real, injeção Common Rail, bicos e Arla 32.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">03. Revisão de Câmbio Manual e Automatizado</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Desmontagem técnica de transmissão, troca de sincronizados, engrenagens, rolamentos e embreagem.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">04. Diferencial, Redutores e Tomada de Força</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Ajuste e reconstrução de coroa e pinhão, satélite, cubos redutores de roda e tomadas de força (TDP).
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">05. Turbina, Alimentação e Arrefecimento</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Revisão de turbocompressores, intercooler, bombas d'água/óleo e radiadores sob carga severa.
                   </p>
                 </div>
@@ -558,8 +569,8 @@
 
     <!-- ======================================================================
          EDITORIAL SPLIT 02: SOLUÇÕES 360º / ESTRUTURA COMPLETA (Rounded Split Card)
-         Desktop: "Passe o mouse para detalhar"
-         Mobile/Touch: "Toque para ver os serviços ↓"
+         Desktop (lg): Hover over white column ("Passe o mouse para detalhar")
+         Mobile (< lg): Uncrowded stacked layout + Full-width "Clique para ver os detalhes" button
          ====================================================================== -->
     <section id="solucoes-360" class="editorial-split-row w-full px-4 sm:px-6 lg:px-10 pb-10 sm:pb-16 bg-[#F4F4F2]">
       <div class="max-w-[1800px] mx-auto rounded-[24px] sm:rounded-[28px] overflow-hidden bg-white border border-[#DFDFDD] shadow-sm grid grid-cols-1 lg:grid-cols-12 viewport-split-section">
@@ -567,15 +578,14 @@
         <!-- Left 8 Cols (66.6%): 360º Components Assembly -->
         <div
           data-reveal-img
-          class="editorial-photo-wrap lg:col-span-8 relative h-[250px] sm:h-[380px] lg:h-full bg-[#0A0A0A] overflow-hidden"
+          class="editorial-photo-wrap lg:col-span-8 relative h-[240px] sm:h-[360px] lg:h-full bg-[#0A0A0A] overflow-hidden"
         >
           <img
             src="assets/img/split-solucoes360-flr.jpg"
             alt="Estrutura 360º F.L.R. Mecânica Diesel — cilindro hidráulico, mola pesada, solda estrutural, lonas de freio, rolamento, elétrica e ar-condicionado"
             class="w-full h-full object-cover object-center transition-all duration-700"
           />
-          <!-- Floating Glassmorphic Badge -->
-          <div class="editorial-photo-badge absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto rounded-[18px] bg-black/50 backdrop-blur-md border border-white/25 px-4 py-3 sm:px-5 sm:py-4 text-white max-w-md pointer-events-none shadow-lg">
+          <div class="editorial-photo-badge hidden sm:block absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto rounded-[18px] bg-black/50 backdrop-blur-md border border-white/25 px-4 py-3 sm:px-5 sm:py-4 text-white max-w-md pointer-events-none shadow-lg">
             <div class="flex items-center justify-between gap-3">
               <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white">
                 <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
@@ -594,33 +604,56 @@
         <!-- Right 4 Cols (33.3%): Interactive White Column -->
         <div
           data-reveal="right"
-          class="editorial-spec-col lg:col-span-4 p-5 sm:p-8 xl:p-10 flex flex-col justify-between lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD] cursor-pointer"
+          class="editorial-spec-col lg:col-span-4 p-6 sm:p-8 xl:p-10 flex flex-col justify-between lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD] cursor-pointer"
           aria-label="Soluções 360º — veja o detalhamento dos serviços"
         >
           <!-- DEFAULT REST STATE -->
-          <div class="editorial-rest-state flex flex-col justify-between h-full gap-4 lg:gap-0">
-            <div class="flex items-center justify-between gap-2">
-              <h3 class="text-base sm:text-[21px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
+          <div class="editorial-rest-state flex flex-col justify-between h-full">
+            
+            <!-- DESKTOP-ONLY TOP ROW (Hidden on Mobile via Tailwind `hidden lg:flex`) -->
+            <div class="hidden lg:flex items-start justify-between gap-3">
+              <h3 class="text-lg xl:text-[21px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
                 Soluções 360º
               </h3>
-              <span class="inline-flex items-center gap-2 bg-[#F4F4F2] border border-[#DFDFDD] text-[#0A0A0A] text-[11px] sm:text-xs font-semibold px-3.5 py-2 rounded-full shrink-0 shadow-2xs">
+              <span class="inline-flex items-center gap-2 bg-[#F4F4F2] border border-[#DFDFDD] text-[#0A0A0A] text-xs font-semibold px-3.5 py-2 rounded-full shrink-0">
                 <span class="w-2 h-2 rounded-full bg-[#FE5502] animate-ping"></span>
-                <span class="prompt-copy-desktop">Passe o mouse para detalhar</span>
-                <span class="prompt-copy-mobile">Toque para ver os serviços ↓</span>
+                <span>Passe o mouse para detalhar</span>
               </span>
             </div>
 
+            <!-- MOBILE-ONLY EYEBROW TAG (Spacious & Uncrowded) -->
+            <div class="lg:hidden flex items-center justify-between mb-3">
+              <span class="inline-flex items-center gap-2 text-xs font-bold text-[#6E6E6E] uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
+                Especialidade #02 · Soluções 360º
+              </span>
+            </div>
+
+            <!-- Main Display Title -->
             <div class="my-1 lg:my-0 flex items-center justify-start">
-              <span class="vertical-editorial-title text-[26px] sm:text-[34px] xl:text-[42px] font-bold text-[#0A0A0A] uppercase">
+              <span class="vertical-editorial-title text-[28px] sm:text-[34px] xl:text-[42px] font-bold text-[#0A0A0A] uppercase">
                 ESTRUTURA<br />COMPLETA
               </span>
             </div>
 
-            <div>
-              <p class="text-xs sm:text-[14px] text-[#6E6E6E] font-body leading-[1.45] max-w-[42ch]">
+            <!-- Description + Mobile Full-Width "Clique para ver os detalhes" Button -->
+            <div class="mt-3 lg:mt-0">
+              <p class="text-sm sm:text-[14px] text-[#6E6E6E] font-body leading-[1.5] max-w-[42ch]">
                 Não terceirize o seu tempo. Contamos com especialistas próprios em Hidráulica e Pneumática, Elétrica e Ar-Condicionado, Soldas Pesadas, Feixes de Molas, Troca de Lonas e Freios, Borracharia, Lavagem e Lubrificação.
               </p>
+
+              <!-- MOBILE-ONLY FULL-WIDTH BUTTON -->
+              <div class="lg:hidden mt-5 w-full py-3.5 px-4 rounded-2xl bg-[#F4F4F2] active:bg-[#EAEAE6] border border-[#DFDFDD] flex items-center justify-between gap-3">
+                <span class="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#0A0A0A]">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#FE5502] animate-pulse shrink-0"></span>
+                  <span class="mobile-click-label">Clique para ver os detalhes</span>
+                </span>
+                <span class="mobile-click-arrow w-7 h-7 rounded-full bg-white border border-[#DFDFDD] flex items-center justify-center text-xs font-bold text-[#FE5502] shrink-0">
+                  ↓
+                </span>
+              </div>
             </div>
+
           </div>
 
           <!-- HOVER / MOBILE EXPANDED STATE: ROUNDED SERVICE SUB-CARDS -->
@@ -642,38 +675,38 @@
                 </button>
               </div>
 
-              <div class="mt-3 space-y-1.5">
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+              <div class="mt-3 space-y-2">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">01. Hidráulica e Pneumática Pesada</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Bombas e comandos hidráulicos, vedação e recuperação de cilindros/pistões, mangueiras e válvulas de ar.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">02. Elétrica e Ar-Condicionado</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Alternadores, motores de partida, chicotes, compressores de A/C e climatização de cabines agrícolas e caminhões.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">03. Soldas em Geral e Soldas Pesadas</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Recuperação estrutural de chassis, caçambas, garras florestais, lanças de escavadeiras e implementos.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">04. Freios, Troca de Lonas e Feixes de Molas</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Revisão completa de freios a ar, cuícas, catracas, troca de lonas, tambores e arqueamento de molas.
                   </p>
                 </div>
 
-                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2 transition-colors">
+                <div class="service-detail-item rounded-[14px] bg-[#F6F6F4] border border-[#E5E5E3] px-3.5 py-2.5 transition-colors">
                   <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">05. Borracharia, Lavagem e Lubrificação</p>
-                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug mt-0.5">
                     Manutenção de pneus pesados e agrícolas, lavagem técnica de chassi/motor e lubrificação completa.
                   </p>
                 </div>
@@ -1286,7 +1319,7 @@
         <!-- Right 4 Cols (33.3%): Field Dispatch Conversion Column -->
         <div
           data-reveal="right"
-          class="lg:col-span-4 p-5 sm:p-8 xl:p-10 flex flex-col justify-between lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD]"
+          class="lg:col-span-4 p-6 sm:p-8 xl:p-10 flex flex-col justify-between lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD]"
         >
           
           <div class="flex items-center justify-between">
@@ -1552,7 +1585,7 @@
     </div>
   </div>
 
-  <!-- Main Interactive & Motion Controller -->
-  <script src="assets/js/main.js"></script>
+  <!-- Main Interactive & Motion Controller (Cache-busted) -->
+  <script src="assets/js/main.js?v=20261116c"></script>
 </body>
 </html>

@@ -505,18 +505,22 @@ document.addEventListener("DOMContentLoaded", () => {
   onScrollFrame();
 
   // ==========================================================================
-  // 6. TOUCH / CLICK ACCORDION FOR EDITORIAL HOVER COLUMNS (MOTORES & 360º)
+  // 6. CLICK / TAP ACCORDION FOR EDITORIAL COLUMNS (MOTORES & 360º)
   // ==========================================================================
   const editorialCols = document.querySelectorAll(".editorial-spec-col");
   editorialCols.forEach((col) => {
     col.addEventListener("click", (e) => {
       if (e.target.closest("a, [data-spec-trigger]")) return;
       const isExpanded = col.classList.toggle("is-expanded");
-      const mobileHintText = col.querySelector(".prompt-copy-mobile");
-      if (mobileHintText) {
-        mobileHintText.textContent = isExpanded
-          ? "Ocultar serviços ↑"
-          : "Toque para ver os serviços ↓";
+      const mobileLabel = col.querySelector(".mobile-click-label");
+      const mobileArrow = col.querySelector(".mobile-click-arrow");
+      if (mobileLabel) {
+        mobileLabel.textContent = isExpanded
+          ? "Clique para ocultar os detalhes"
+          : "Clique para ver os detalhes";
+      }
+      if (mobileArrow) {
+        mobileArrow.textContent = isExpanded ? "↑" : "↓";
       }
     });
   });
