@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.L.R. Mecânica Diesel e Solda em Geral | Lençóis Paulista - SP</title>
+  <meta name="description" content="Manutenção diesel pesada e leve, máquinas agrícolas, linha amarela, motores, câmbio, diferencial, hidráulica, elétrica, ar-condicionado e socorro em campo em Lençóis Paulista - SP e região." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flr: {
+              orange: '#FE5502',
+              orangeDark: '#E04800',
+              black: '#0A0A0A',
+              white: '#FFFFFF',
+              surface: '#F4F4F2',
+              border: '#DFDFDD',
+              muted: '#6E6E6E'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Architectural & Motion Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-white text-[#0A0A0A] selection:bg-[#FE5502] selection:text-white">
+
+  <!-- Hidden SVG Hardware Unsharp Mask Filter for Crisp Hero Video Rendering -->
+  <svg class="hidden w-0 h-0 absolute pointer-events-none" aria-hidden="true">
+    <defs>
+      <filter id="flr-sharp-video" color-interpolation-filters="sRGB">
+        <feConvolveMatrix
+          order="3"
+          kernelMatrix="0 -0.18 0 -0.18 1.72 -0.18 0 -0.18 0"
+          preserveAlpha="true"
+        />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ========================================================================
+       HEADER / NAVIGATION BAR
+       ======================================================================== -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 py-7 transition-all duration-300">
+    <div class="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between">
+      
+      <!-- Left Navigation Links -->
+      <nav class="hidden xl:flex items-center gap-7 text-[15px] font-medium text-white/90 tracking-tight" aria-label="Navegação Principal">
+        <a href="#servicos" class="hover:text-[#FE5502] transition-colors">Serviços</a>
+        <a href="#motores-transmissao" class="hover:text-[#FE5502] transition-colors">Especialidades</a>
+        <a href="#resultados" class="hover:text-[#FE5502] transition-colors">Resultados</a>
+        <a href="#setores" class="hover:text-[#FE5502] transition-colors">Setores</a>
+        <a href="#historia" class="hover:text-[#FE5502] transition-colors">Nossa História</a>
+      </nav>
+
+      <!-- Center Official FLR Vector Logo -->
+      <a href="#topo" class="block shrink-0 focus:outline-none" aria-label="F.L.R. Mecânica Diesel e Solda em Geral - Início">
+        <img src="assets/img/logo-flr.svg" alt="FLR Mecânica Diesel e Solda em Geral" class="h-9 md:h-11 w-auto" />
+      </a>
+
+      <!-- Right Location & Emergency CTA -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#diferencial" class="text-[15px] font-medium text-white/90 hover:text-white transition-colors flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#FE5502] inline-block animate-pulse"></span>
+          Lençóis Paulista - SP
+        </a>
+        <a
+          href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Preciso%20de%20socorro%20r%C3%A1pido%20para%20uma%20m%C3%A1quina%20ou%20frota%20diesel."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-[15px] px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-[1.03] shadow-sm"
+        >
+          Chamar Socorro Rápido
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu de navegação"
+        class="xl:hidden text-white p-2 border border-white/20 rounded-lg hover:border-[#FE5502] transition-colors"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-[#0A0A0A] border-t border-white/10 mt-4 px-6 py-6">
+      <div class="flex flex-col gap-4 text-white text-base font-medium">
+        <a href="#servicos" class="mobile-nav-link py-1 hover:text-[#FE5502]">Serviços</a>
+        <a href="#motores-transmissao" class="mobile-nav-link py-1 hover:text-[#FE5502]">Motores &amp; Soluções 360º</a>
+        <a href="#resultados" class="mobile-nav-link py-1 hover:text-[#FE5502]">Resultados em Números</a>
+        <a href="#setores" class="mobile-nav-link py-1 hover:text-[#FE5502]">Setores Atendidos</a>
+        <a href="#historia" class="mobile-nav-link py-1 hover:text-[#FE5502]">Nossa História &amp; Estrutura</a>
+        <a href="#diferencial" class="mobile-nav-link py-1 hover:text-[#FE5502]">Atendimento em Campo</a>
+        <div class="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <span class="text-sm text-white/70">Base em Lençóis Paulista - SP · (19) 99791-1326</span>
+          <a
+            href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Preciso%20de%20socorro%20r%C3%A1pido."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#FE5502] text-white text-center font-semibold px-6 py-3 rounded-full"
+          >
+            Chamar Socorro Rápido
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ======================================================================
+         HERO SECTION (1:1 Native Full-HD Crisp Video Rendering)
+         ====================================================================== -->
+    <section class="relative w-full min-h-[640px] h-screen max-h-[1000px] bg-[#0A0A0A] overflow-hidden flex items-center">
+      <!-- Background Video at 1:1 Native Pixel Clarity (No CSS Scale Blur) -->
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        poster="assets/img/hero-trator-lavoura.jpg"
+        class="absolute inset-0 w-full h-full object-cover object-center hero-video-crisp"
+      >
+        <source src="assets/img/hero-flr.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Directional Vignettes matching Figma PDF -->
+      <div class="absolute inset-0 hero-vignette"></div>
+      <div class="absolute inset-x-0 top-0 h-36 hero-top-vignette"></div>
+
+      <div class="relative z-10 w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-24 pt-16">
+        <div class="max-w-[650px]">
+          <h1
+            data-reveal="left"
+            style="--reveal-delay: 80ms"
+            class="text-[40px] sm:text-[52px] lg:text-[64px] font-bold tracking-[-0.03em] leading-[1.03] text-white"
+          >
+            <span class="text-[#FE5502]">A força que<br />mantém</span> a sua<br />frota e a sua safra<br />em movimento.
+          </h1>
+          <p
+            data-reveal="left"
+            style="--reveal-delay: 200ms"
+            class="mt-6 text-base sm:text-[19px] text-white/85 font-body font-normal leading-[1.45] max-w-[440px]"
+          >
+            Onde a sua máquina parar, a nossa estrutura chega. Manutenção diesel de alta precisão na lavoura, na obra ou na estrada.
+          </p>
+
+          <div
+            data-reveal
+            style="--reveal-delay: 320ms"
+            class="mt-8 flex flex-wrap items-center gap-4"
+          >
+            <a
+              href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Estou%20com%20uma%20m%C3%A1quina%20parada%20e%20preciso%20de%20atendimento."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-base px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.03] inline-flex items-center gap-2.5"
+            >
+              <span>Acionar Equipe em Campo</span>
+              <span class="text-white/90 text-sm font-normal">(19) 99791-1326</span>
+            </a>
+            <a
+              href="#motores-transmissao"
+              class="border border-white/30 hover:border-white text-white font-medium text-base px-6 py-3.5 rounded-full transition-colors bg-black/25 backdrop-blur-sm"
+            >
+              Conhecer Estrutura 360º
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="#servicos"
+        class="absolute bottom-0 right-6 md:right-12 lg:right-20 z-10 flex items-start gap-4 pb-10 text-white/90 hover:text-[#FE5502] transition-colors group"
+      >
+        <span class="text-sm md:text-[15px] font-medium tracking-tight mt-0.5">Role para descobrir</span>
+        <span class="w-[1px] h-16 bg-white/25 relative overflow-hidden block">
+          <span class="w-full h-full bg-white group-hover:bg-[#FE5502] block scroll-line-animated"></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 001 / 002 / 003 — ARCHITECTURAL PILLARS GRID
+         ====================================================================== -->
+    <section id="servicos" class="w-full bg-white border-b border-[#DFDFDD]">
+      <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#DFDFDD]">
+        
+        <!-- PILLAR 001 -->
+        <article class="pillar-card flex flex-col justify-between p-8 sm:p-10 xl:p-12 min-h-[600px] xl:min-h-[660px]">
+          <div data-reveal style="--reveal-delay: 0ms" class="flex items-center justify-between">
+            <span class="text-[#8C8C8C] text-lg md:text-xl font-medium tracking-tight">001</span>
+            <button
+              type="button"
+              data-spec-trigger="campo"
+              class="text-xs font-semibold text-[#FE5502] hover:underline cursor-pointer"
+            >
+              Ver ficha técnica +
+            </button>
+          </div>
+
+          <div
+            data-reveal-cutout
+            style="--reveal-delay: 80ms"
+            class="my-6 flex items-center justify-center h-[300px] sm:h-[340px]"
+          >
+            <img
+              src="assets/img/card-trator.png"
+              alt="Trator agrícola pesado — Resgate e Atendimento em Campo F.L.R."
+              class="pillar-image max-h-full w-auto object-contain"
+            />
+          </div>
+
+          <div data-reveal style="--reveal-delay: 160ms">
+            <h2 class="text-[26px] sm:text-[32px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
+              Resgate e Atendimento<br />em Campo
+            </h2>
+            <p class="mt-3.5 text-sm sm:text-[15px] text-[#6E6E6E] font-body leading-[1.45] max-w-[44ch]">
+              Sua operação não pode perder dias esperando guincho. Levamos diagnóstico computadorizado, solda, hidráulica e mecânica pesada diretamente até a sua fazenda, usina ou frente de trabalho.
+            </p>
+          </div>
+        </article>
+
+        <!-- PILLAR 002 -->
+        <article class="pillar-card flex flex-col justify-between p-8 sm:p-10 xl:p-12 min-h-[600px] xl:min-h-[660px]">
+          <div data-reveal style="--reveal-delay: 120ms" class="flex items-center justify-between">
+            <span class="text-[#8C8C8C] text-lg md:text-xl font-medium tracking-tight">002</span>
+            <button
+              type="button"
+              data-spec-trigger="agricola"
+              class="text-xs font-semibold text-[#FE5502] hover:underline cursor-pointer"
+            >
+              Ver ficha técnica +
+            </button>
+          </div>
+
+          <div
+            data-reveal-cutout
+            style="--reveal-delay: 200ms"
+            class="my-6 flex items-center justify-center h-[300px] sm:h-[340px]"
+          >
+            <img
+              src="assets/img/card-escavadeira.png"
+              alt="Escavadeira florestal e linha amarela — Manutenção Pesada F.L.R."
+              class="pillar-image max-h-full w-auto object-contain"
+            />
+          </div>
+
+          <div data-reveal style="--reveal-delay: 280ms">
+            <h2 class="text-[26px] sm:text-[32px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
+              Força Agrícola &amp;<br />Linha Amarela
+            </h2>
+            <p class="mt-3.5 text-sm sm:text-[15px] text-[#6E6E6E] font-body leading-[1.45] max-w-[44ch]">
+              Manutenção preparada para o regime severo da terra, da madeira e da cana. Domínio completo em tratores, colheitadeiras, pás carregadeiras e máquinas de terraplanagem.
+            </p>
+          </div>
+        </article>
+
+        <!-- PILLAR 003 -->
+        <article class="pillar-card flex flex-col justify-between p-8 sm:p-10 xl:p-12 min-h-[600px] xl:min-h-[660px]">
+          <div data-reveal style="--reveal-delay: 240ms" class="flex items-center justify-between">
+            <span class="text-[#8C8C8C] text-lg md:text-xl font-medium tracking-tight">003</span>
+            <button
+              type="button"
+              data-spec-trigger="frotas"
+              class="text-xs font-semibold text-[#FE5502] hover:underline cursor-pointer"
+            >
+              Ver ficha técnica +
+            </button>
+          </div>
+
+          <div
+            data-reveal-cutout
+            style="--reveal-delay: 320ms"
+            class="my-6 flex items-center justify-center h-[300px] sm:h-[340px]"
+          >
+            <img
+              src="assets/img/card-motor.png"
+              alt="Motor diesel pesado em corte técnico — Frotas Pesadas e Linha Leve F.L.R."
+              class="pillar-image max-h-full w-auto object-contain"
+            />
+          </div>
+
+          <div data-reveal style="--reveal-delay: 400ms">
+            <h2 class="text-[26px] sm:text-[32px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
+              Frotas Pesadas &amp;<br />Linha Leve Diesel
+            </h2>
+            <p class="mt-3.5 text-sm sm:text-[15px] text-[#6E6E6E] font-body leading-[1.45] max-w-[44ch]">
+              Solução de ponta a ponta para transportadoras, locadoras e rodoviários. De motores, câmbio e diferencial até elétrica, freios e climatização em um único lugar.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CINEMATIC BANNER STRIP ("F.L.R. MECÂNICA APRESENTA")
+         ====================================================================== -->
+    <section class="relative w-full py-16 md:py-22 bg-[#0A0A0A] overflow-hidden border-b border-[#DFDFDD]">
+      <img
+        src="assets/img/hero-trator-lavoura.jpg"
+        alt=""
+        aria-hidden="true"
+        data-parallax="0.1"
+        class="absolute inset-0 w-full h-full object-cover object-center opacity-45 scale-105"
+      />
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div class="relative z-10 max-w-[1800px] mx-auto px-6 md:px-16 lg:px-28 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <p
+          data-reveal="left"
+          class="text-white text-2xl sm:text-[30px] font-bold tracking-[-0.03em] uppercase"
+        >
+          F.L.R. MECÂNICA APRESENTA
+        </p>
+        <p
+          data-reveal="right"
+          style="--reveal-delay: 120ms"
+          class="text-white/95 text-base sm:text-[20px] font-medium tracking-[-0.02em] leading-[1.25] max-w-[460px]"
+        >
+          Estrutura completa de ponta a ponta para você nunca mais depender de várias oficinas.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         EDITORIAL SPLIT 01: MOTORES & TRANSMISSÃO
+         Image: split-motores-flr.jpg (1st attached image)
+         Right Column: Prompt in place of "Saiba mais" before hover
+         ====================================================================== -->
+    <section id="motores-transmissao" class="editorial-split-row w-full bg-white border-b border-[#DFDFDD]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 viewport-split-section">
+        
+        <!-- Left 8 Cols (66.6%): F.L.R. Mechanic Working on Diesel Engine -->
+        <div
+          data-reveal-img
+          class="editorial-photo-wrap lg:col-span-8 relative h-[360px] sm:h-[440px] lg:h-full bg-[#0A0A0A] overflow-hidden"
+        >
+          <img
+            src="assets/img/split-motores-flr.jpg"
+            alt="Mecânico da F.L.R. Mecânica Diesel trabalhando no cabeçote de motor diesel"
+            class="w-full h-full object-cover object-center transition-all duration-700"
+          />
+          <div class="editorial-photo-badge absolute bottom-6 left-6 right-6 sm:right-auto bg-[#0A0A0A]/90 backdrop-blur-md border-l-4 border-[#FE5502] px-5 py-3.5 text-white max-w-md pointer-events-none">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#FE5502] block">TREM DE FORÇA DIESEL · PRECISÃO F.L.R.</span>
+            <p class="text-xs sm:text-sm font-medium text-white/90 mt-0.5">
+              Diagnóstico computadorizado em tempo real, retífica de motores, câmbio e diferencial sem tentativas cegas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right 4 Cols (33.3%): Interactive White Column -->
+        <div
+          data-reveal="right"
+          class="editorial-spec-col lg:col-span-4 p-6 sm:p-9 xl:p-10 flex flex-col justify-between min-h-[480px] lg:min-h-0 lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD] cursor-pointer"
+          aria-label="Motores e Transmissão — passe o mouse para ver o detalhamento dos serviços"
+        >
+          <!-- DEFAULT REST STATE (Hover Prompt in top-right where "Saiba mais" used to be) -->
+          <div class="editorial-rest-state flex flex-col justify-between h-full">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-lg sm:text-[21px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A] uppercase">
+                MOTORES &amp;<br />TRANSMISSÃO
+              </h3>
+              <span class="inline-flex items-center gap-2 bg-[#F4F4F2] border border-[#DFDFDD] text-[#0A0A0A] text-[11px] sm:text-xs font-semibold px-3.5 py-2 rounded-full shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#FE5502] animate-ping"></span>
+                <span>Passe o mouse para detalhar</span>
+              </span>
+            </div>
+
+            <div class="my-6 lg:my-0 flex items-center justify-start">
+              <span class="vertical-editorial-title text-[30px] sm:text-[36px] xl:text-[42px] font-bold text-[#0A0A0A] uppercase">
+                MOTORES &amp;<br />TRANSMISSÃO
+              </span>
+            </div>
+
+            <div>
+              <p class="text-xs sm:text-[14px] text-[#6E6E6E] font-body leading-[1.45] max-w-[42ch]">
+                Retífica e manutenção de motores diesel, revisão de câmbio, diferencial e diagnóstico eletrônico de precisão. Identificamos a falha exata sem tentativas cegas, garantindo agilidade e custo justo em cada reparo.
+              </p>
+            </div>
+          </div>
+
+          <!-- HOVER STATE: DETAILED SERVICES BREAKDOWN -->
+          <div class="editorial-hover-details">
+            <div>
+              <div class="flex items-center justify-between gap-3 pb-3 border-b border-[#DFDFDD]">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-[#FE5502] block">ESPECIFICAÇÃO DE SERVIÇOS</span>
+                  <h4 class="text-lg sm:text-xl font-bold tracking-[-0.03em] text-[#0A0A0A] uppercase">
+                    MOTORES &amp; TRANSMISSÃO
+                  </h4>
+                </div>
+                <button
+                  type="button"
+                  data-spec-trigger="motores"
+                  class="bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-xs px-3.5 py-1.5 rounded-full transition-colors shrink-0 cursor-pointer"
+                >
+                  Ficha Completa
+                </button>
+              </div>
+
+              <div class="mt-3 space-y-1.5">
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">01. Retífica e Manutenção de Motores Diesel</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Retífica completa e parcial: cabeçote, bloco, camisas, pistões, bronzinas e regulagem de válvulas.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">02. Diagnóstico Eletrônico de Precisão</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Scanner computadorizado multimarcas, leitura em tempo real, injeção Common Rail, bicos e Arla 32.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">03. Revisão de Câmbio Manual e Automatizado</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Desmontagem técnica de transmissão, troca de sincronizados, engrenagens, rolamentos e embreagem.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">04. Diferencial, Redutores e Tomada de Força</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Ajuste e reconstrução de coroa e pinhão, satélite, cubos redutores de roda e tomadas de força (TDP).
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">05. Turbina, Alimentação e Arrefecimento</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Revisão de turbocompressores, intercooler, bombas d'água/óleo e radiadores sob carga severa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-[#DFDFDD] flex items-center justify-between gap-3">
+              <span class="text-[11px] font-medium text-[#6E6E6E]">Diagnóstico exato, sem tentativas cegas.</span>
+              <a
+                href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Preciso%20de%20atendimento%20em%20*Motores%20%2F%20C%C3%A2mbio%20%2F%20Diferencial%20%2F%20Diagn%C3%B3stico*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-[#0A0A0A] hover:bg-[#FE5502] text-white font-semibold text-xs px-4 py-2 rounded-full transition-colors shrink-0"
+              >
+                Orçar no WhatsApp →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         EDITORIAL SPLIT 02: SOLUÇÕES 360º / ESTRUTURA COMPLETA
+         Image: split-solucoes360-flr.jpg (2nd attached image)
+         Right Column: Prompt in place of "Saiba mais" before hover
+         ====================================================================== -->
+    <section id="solucoes-360" class="editorial-split-row w-full bg-white border-b border-[#DFDFDD]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 viewport-split-section">
+        
+        <!-- Left 8 Cols (66.6%): 360º Components Assembly -->
+        <div
+          data-reveal-img
+          class="editorial-photo-wrap lg:col-span-8 relative h-[360px] sm:h-[440px] lg:h-full bg-[#0A0A0A] overflow-hidden"
+        >
+          <img
+            src="assets/img/split-solucoes360-flr.jpg"
+            alt="Estrutura 360º F.L.R. Mecânica Diesel — cilindro hidráulico, mola pesada, solda estrutural, lonas de freio, rolamento, elétrica e ar-condicionado"
+            class="w-full h-full object-cover object-center transition-all duration-700"
+          />
+          <div class="editorial-photo-badge absolute bottom-6 left-6 right-6 sm:right-auto bg-[#0A0A0A]/90 backdrop-blur-md border-l-4 border-[#FE5502] px-5 py-3.5 text-white max-w-md pointer-events-none">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#FE5502] block">CENTRO TÉCNICO INTEGRADO · 360º</span>
+            <p class="text-xs sm:text-sm font-medium text-white/90 mt-0.5">
+              Hidráulica, pneumática, elétrica, ar-condicionado, soldas pesadas, freios, molas e borracharia em um só lugar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right 4 Cols (33.3%): Interactive White Column -->
+        <div
+          data-reveal="right"
+          class="editorial-spec-col lg:col-span-4 p-6 sm:p-9 xl:p-10 flex flex-col justify-between min-h-[480px] lg:min-h-0 lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD] cursor-pointer"
+          aria-label="Soluções 360º — passe o mouse para ver o detalhamento dos serviços"
+        >
+          <!-- DEFAULT REST STATE (Hover Prompt in top-right where "Saiba mais" used to be) -->
+          <div class="editorial-rest-state flex flex-col justify-between h-full">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-lg sm:text-[21px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
+                Soluções 360º
+              </h3>
+              <span class="inline-flex items-center gap-2 bg-[#F4F4F2] border border-[#DFDFDD] text-[#0A0A0A] text-[11px] sm:text-xs font-semibold px-3.5 py-2 rounded-full shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#FE5502] animate-ping"></span>
+                <span>Passe o mouse para detalhar</span>
+              </span>
+            </div>
+
+            <div class="my-6 lg:my-0 flex items-center justify-start">
+              <span class="vertical-editorial-title text-[30px] sm:text-[36px] xl:text-[42px] font-bold text-[#0A0A0A] uppercase">
+                ESTRUTURA<br />COMPLETA
+              </span>
+            </div>
+
+            <div>
+              <p class="text-xs sm:text-[14px] text-[#6E6E6E] font-body leading-[1.45] max-w-[42ch]">
+                Não terceirize o seu tempo. Contamos com especialistas próprios em Hidráulica e Pneumática, Elétrica e Ar-Condicionado, Soldas Pesadas, Feixes de Molas, Troca de Lonas e Freios, Borracharia, Lavagem e Lubrificação.
+              </p>
+            </div>
+          </div>
+
+          <!-- HOVER STATE: DETAILED SERVICES BREAKDOWN -->
+          <div class="editorial-hover-details">
+            <div>
+              <div class="flex items-center justify-between gap-3 pb-3 border-b border-[#DFDFDD]">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-[#FE5502] block">ESTRUTURA COMPLETA F.L.R.</span>
+                  <h4 class="text-lg sm:text-xl font-bold tracking-[-0.03em] text-[#0A0A0A]">
+                    Soluções 360º
+                  </h4>
+                </div>
+                <button
+                  type="button"
+                  data-spec-trigger="estrutura360"
+                  class="bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-xs px-3.5 py-1.5 rounded-full transition-colors shrink-0 cursor-pointer"
+                >
+                  Ficha Completa
+                </button>
+              </div>
+
+              <div class="mt-3 space-y-1.5">
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">01. Hidráulica e Pneumática Pesada</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Bombas e comandos hidráulicos, vedação e recuperação de cilindros/pistões, mangueiras e válvulas de ar.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">02. Elétrica e Ar-Condicionado</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Alternadores, motores de partida, chicotes, compressores de A/C e climatização de cabines agrícolas e caminhões.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">03. Soldas em Geral e Soldas Pesadas</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Recuperação estrutural de chassis, caçambas, garras florestais, lanças de escavadeiras e implementos.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">04. Freios, Troca de Lonas e Feixes de Molas</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Revisão completa de freios a ar, cuícas, catracas, troca de lonas, tambores e arqueamento de molas.
+                  </p>
+                </div>
+
+                <div class="service-detail-item border-l-2 border-[#0A0A0A] pl-3 py-1.5 transition-colors">
+                  <p class="text-xs sm:text-[13px] font-bold text-[#0A0A0A]">05. Borracharia, Lavagem e Lubrificação</p>
+                  <p class="text-[11px] sm:text-xs text-[#6E6E6E] leading-snug">
+                    Manutenção de pneus pesados e agrícolas, lavagem técnica de chassi/motor e lubrificação completa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-[#DFDFDD] flex items-center justify-between gap-3">
+              <span class="text-[11px] font-medium text-[#6E6E6E]">Tudo resolvido em uma única parada.</span>
+              <a
+                href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Gostaria%20de%20atendimento%20com%20a%20*Estrutura%20360%C2%BA*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-[#0A0A0A] hover:bg-[#FE5502] text-white font-semibold text-xs px-4 py-2 rounded-full transition-colors shrink-0"
+              >
+                Orçar no WhatsApp →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DYNAMIC RESULTS & NUMBERS SECTION (#resultados)
+         ====================================================================== -->
+    <section id="resultados" class="w-full bg-[#0A0A0A] text-white py-20 sm:py-26 px-6 md:px-12 lg:px-16 border-b border-white/10">
+      <div class="max-w-[1800px] mx-auto">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-12 border-b border-white/15">
+          <div data-reveal="left">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#FE5502]">PERFORMANCE &amp; CAPACIDADE TÉCNICA</span>
+            <h2 class="mt-2 text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-[-0.03em] leading-[1.05]">
+              Resultados que mantêm<br />a sua operação rodando.
+            </h2>
+          </div>
+          <p data-reveal="right" class="text-white/70 font-body text-sm sm:text-base max-w-[46ch]">
+            De Mineiros do Tietê para uma estrutura completa em Lençóis Paulista: números construídos com transparência, diagnóstico preciso e socorro direto na frente de trabalho.
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Metric 1 -->
+          <div data-reveal style="--reveal-delay: 0ms" class="metric-card bg-white/[0.03] border border-white/15 p-7 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-white/50 font-medium">
+                <span>ESTRUTURA INTEGRADA</span>
+                <span class="text-[#FE5502] font-bold">360º</span>
+              </div>
+              <p
+                data-counter="12"
+                data-prefix=""
+                data-suffix=""
+                class="tabular-nums mt-4 text-5xl sm:text-6xl font-extrabold text-white tracking-tight"
+              >
+                12
+              </p>
+              <h3 class="mt-2 text-lg font-bold text-[#FE5502]">Especialidades Próprias</h3>
+              <p class="mt-2 text-xs sm:text-sm text-white/70 font-body leading-relaxed">
+                Motores, câmbio, diferencial, diagnóstico eletrônico, hidráulica, pneumática, elétrica, A/C, solda, freios, molas e borracharia em um só lugar.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <div class="w-full h-1.5 bg-white/10 overflow-hidden">
+                <div data-bar-width="100%" class="metric-bar-fill h-full bg-[#FE5502]"></div>
+              </div>
+              <span class="text-[11px] text-white/50 mt-1.5 block">Zero necessidade de terceirizar oficinas</span>
+            </div>
+          </div>
+
+          <!-- Metric 2 -->
+          <div data-reveal style="--reveal-delay: 100ms" class="metric-card bg-white/[0.03] border border-white/15 p-7 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-white/50 font-medium">
+                <span>ECONOMIA DE TEMPO</span>
+                <span class="text-[#FE5502] font-bold">CAMPO</span>
+              </div>
+              <p
+                data-counter="78"
+                data-prefix="-"
+                data-suffix="%"
+                class="tabular-nums mt-4 text-5xl sm:text-6xl font-extrabold text-white tracking-tight"
+              >
+                -78%
+              </p>
+              <h3 class="mt-2 text-lg font-bold text-[#FE5502]">Tempo de Máquina Parada</h3>
+              <p class="mt-2 text-xs sm:text-sm text-white/70 font-body leading-relaxed">
+                Redução média no tempo de inatividade ao eliminar espera de prancha, autorização de transporte pesado e deslocamento até a cidade.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <div class="w-full h-1.5 bg-white/10 overflow-hidden">
+                <div data-bar-width="78%" class="metric-bar-fill h-full bg-[#FE5502]"></div>
+              </div>
+              <span class="text-[11px] text-white/50 mt-1.5 block">Atendimento direto no talhão, usina ou obra</span>
+            </div>
+          </div>
+
+          <!-- Metric 3 -->
+          <div data-reveal style="--reveal-delay: 200ms" class="metric-card bg-white/[0.03] border border-white/15 p-7 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-white/50 font-medium">
+                <span>OFICINA MÓVEL</span>
+                <span class="text-[#FE5502] font-bold">IN-LOCO</span>
+              </div>
+              <p
+                data-counter="100"
+                data-prefix=""
+                data-suffix="%"
+                class="tabular-nums mt-4 text-5xl sm:text-6xl font-extrabold text-white tracking-tight"
+              >
+                100%
+              </p>
+              <h3 class="mt-2 text-lg font-bold text-[#FE5502]">Equipada para Resgate</h3>
+              <p class="mt-2 text-xs sm:text-sm text-white/70 font-body leading-relaxed">
+                Caminhão-oficina com compressor industrial, talha, máquina de solda, ferramentas pesadas e picape rápida para diagnóstico e A/C no campo.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <div class="w-full h-1.5 bg-white/10 overflow-hidden">
+                <div data-bar-width="100%" class="metric-bar-fill h-full bg-[#FE5502]"></div>
+              </div>
+              <span class="text-[11px] text-white/50 mt-1.5 block">Lençóis Paulista, Mineiros do Tietê e onde precisar</span>
+            </div>
+          </div>
+
+          <!-- Metric 4 -->
+          <div data-reveal style="--reveal-delay: 300ms" class="metric-card bg-white/[0.03] border border-white/15 p-7 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-white/50 font-medium">
+                <span>VOCAÇÃO MULTISSETORIAL</span>
+                <span class="text-[#FE5502] font-bold">DESDE 2022</span>
+              </div>
+              <p
+                data-counter="8"
+                data-prefix="+"
+                data-suffix=""
+                class="tabular-nums mt-4 text-5xl sm:text-6xl font-extrabold text-white tracking-tight"
+              >
+                +8
+              </p>
+              <h3 class="mt-2 text-lg font-bold text-[#FE5502]">Setores Severos Atendidos</h3>
+              <p class="mt-2 text-xs sm:text-sm text-white/70 font-body leading-relaxed">
+                Florestal, Sucroalcooleiro, Agricultores, Sitiantes, Terraplanagem, Locadoras, Transportadoras e Rodoviários (pesado e linha leve).
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <div class="w-full h-1.5 bg-white/10 overflow-hidden">
+                <div data-bar-width="92%" class="metric-bar-fill h-full bg-[#FE5502]"></div>
+              </div>
+              <span class="text-[11px] text-white/50 mt-1.5 block">Diagnóstico exato, agilidade e preço justo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Downtime Comparison Bar -->
+        <div data-reveal class="mt-8 bg-white/[0.04] border border-white/15 p-6 sm:p-8">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/10">
+            <div>
+              <span class="text-xs font-bold uppercase text-[#FE5502]">SIMULADOR OPERACIONAL F.L.R.</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">
+                Compare o impacto no seu equipamento:
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button
+                type="button"
+                data-scenario-btn="safra"
+                class="px-4 py-2 text-xs font-semibold rounded-full border border-[#FE5502] bg-[#FE5502] text-white transition-colors cursor-pointer"
+              >
+                Colheitadeira / Trator na Safra
+              </button>
+              <button
+                type="button"
+                data-scenario-btn="florestal"
+                class="px-4 py-2 text-xs font-semibold rounded-full border border-white/15 bg-white/5 text-white/75 hover:text-white transition-colors cursor-pointer"
+              >
+                Escavadeira / Florestal
+              </button>
+              <button
+                type="button"
+                data-scenario-btn="frota"
+                class="px-4 py-2 text-xs font-semibold rounded-full border border-white/15 bg-white/5 text-white/75 hover:text-white transition-colors cursor-pointer"
+              >
+                Caminhão / Frota Rodoviária
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div class="p-4 bg-white/[0.03] border border-white/10">
+              <span class="text-[11px] uppercase text-white/50 font-semibold">Oficina Comum (Com Remoção)</span>
+              <p id="scen-trad" class="text-lg sm:text-xl font-bold text-white/70 mt-1">48h a 72h paradas</p>
+            </div>
+            <div class="p-4 bg-[#FE5502]/15 border border-[#FE5502]">
+              <span class="text-[11px] uppercase text-[#FE5502] font-bold">Com Socorro &amp; Estrutura F.L.R.</span>
+              <p id="scen-flr" class="text-lg sm:text-xl font-bold text-white mt-1">Atendimento imediato no talhão</p>
+            </div>
+            <div>
+              <p id="scen-saving" class="text-lg font-bold text-[#FE5502]">Até 78% menos tempo parado</p>
+              <p id="scen-detail" class="text-xs sm:text-sm text-white/75 mt-1">
+                Sem desmontagem para prancha ou espera de transporte especial até a cidade.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SETORES ATENDIDOS (Full-Bleed Image Cards with Floating Glass UI Widgets)
+         ====================================================================== -->
+    <section id="setores" class="w-full bg-[#F4F4F2] py-16 sm:py-24 px-4 sm:px-8 lg:px-12 border-b border-[#DFDFDD]">
+      <div class="max-w-[1800px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          
+          <!-- CARD 1: Florestal, Sucroalcooleiro & Produtores Rurais -->
+          <article
+            data-reveal="left"
+            class="group relative rounded-[28px] overflow-hidden min-h-[600px] sm:min-h-[660px] flex flex-col justify-between p-5 sm:p-7 shadow-xl bg-[#0A0A0A]"
+          >
+            <img
+              src="assets/img/setor-florestal-safra.jpg"
+              alt="Trator e colheitadeira em canavial e floresta de eucalipto com usina sucroalcooleira ao fundo"
+              class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/85"></div>
+
+            <!-- TOP FLOATING TRANSLUCENT GLASS WIDGET -->
+            <div class="relative z-10 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/25 p-5 sm:p-6 text-white shadow-lg">
+              <div class="flex items-center justify-between gap-2 text-xs">
+                <span class="inline-flex items-center gap-2 font-medium text-white/90">
+                  <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
+                  Unidade de Campo #FLR-01
+                </span>
+                <span class="px-3 py-1 rounded-full bg-white/15 border border-white/20 text-[11px] font-semibold text-white">
+                  ✓ Socorro Imediato
+                </span>
+              </div>
+
+              <p class="mt-3 text-xs text-white/75 font-body">
+                Usinas Sucroalcooleiras · Florestal · Sitiantes &amp; Lavouras
+              </p>
+              <p class="mt-0.5 text-2xl sm:text-[30px] font-bold tracking-[-0.03em] text-white">
+                Resgate Direto no Talhão
+              </p>
+
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-[#0A0A0A] text-xs font-bold shadow-sm">
+                  <span class="text-[#FE5502]">✦</span> Tratores &amp; Colheitadeiras
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-white text-xs font-medium">
+                  Caminhões Cana &amp; Madeira
+                </span>
+              </div>
+
+              <div class="mt-5 pt-3.5 border-t border-white/20 flex items-center justify-between gap-4">
+                <div class="text-[11px] sm:text-xs text-white/85 space-y-0.5">
+                  <p>✓ Scanner eletrônico, solda pesada e hidráulica in-loco</p>
+                </div>
+                <a
+                  href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Sou%20do%20setor%20Florestal%20%2F%20Sucroalcooleiro%20%2F%20Agr%C3%ADcola%20e%20preciso%20de%20atendimento."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-1.5 rounded-full bg-white/20 hover:bg-[#FE5502] border border-white/35 text-white text-xs font-semibold transition-colors shrink-0"
+                >
+                  Acionar →
+                </a>
+              </div>
+            </div>
+
+            <!-- BOTTOM HEADLINE & DESCRIPTION OVER PHOTO -->
+            <div class="relative z-10 pt-16 px-1 sm:px-2 pb-1">
+              <h3 class="text-3xl sm:text-4xl xl:text-[42px] font-bold tracking-[-0.03em] leading-[1.06] text-white">
+                Florestal, Sucroalcooleiro<br />&amp; Produtores Rurais.
+              </h3>
+              <p class="mt-3.5 text-white/85 font-body text-sm sm:text-[15px] leading-[1.5] max-w-[48ch]">
+                O ritmo da safra, da cana e da madeira não espera prancha. Nossa oficina móvel chega equipada na fazenda ou usina para destravar a operação na hora.
+              </p>
+            </div>
+          </article>
+
+          <!-- CARD 2: Terraplanagem, Locadoras & Transportadoras -->
+          <article
+            data-reveal="right"
+            style="--reveal-delay: 140ms"
+            class="group relative rounded-[28px] overflow-hidden min-h-[600px] sm:min-h-[660px] flex flex-col justify-between p-5 sm:p-7 shadow-xl bg-[#0A0A0A]"
+          >
+            <img
+              src="assets/img/setor-terraplanagem-frota.jpg"
+              alt="Frota de escavadeiras, tratores de esteira e caminhões pesados alinhados em obra de terraplanagem"
+              class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/85"></div>
+
+            <!-- TOP FLOATING FROSTED WHITE LIST WIDGET -->
+            <div class="relative z-10 rounded-[20px] bg-white/90 backdrop-blur-md border border-white/70 p-5 sm:p-6 text-[#0A0A0A] shadow-lg">
+              <div class="flex items-center justify-between pb-3 border-b border-black/10">
+                <span class="text-xs font-semibold text-[#4A4A4A]">Atendimento 360º · Obra &amp; Estrada</span>
+                <span class="text-base sm:text-lg font-extrabold tracking-tight text-[#0A0A0A]">12 Especialidades</span>
+              </div>
+
+              <div class="divide-y divide-black/10 text-xs">
+                <div class="py-2.5 flex items-center justify-between gap-2">
+                  <div>
+                    <p class="font-bold text-[#0A0A0A]">Linha Amarela &amp; Terraplanagem</p>
+                    <p class="text-[11px] text-[#6E6E6E]">Escavadeiras, pás carregadeiras e tratores</p>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-[11px] font-medium text-[#4A4A4A] hidden sm:inline">Hidráulica &amp; Motor</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#FE5502]/15 text-[#FE5502] font-bold text-[11px]">✓ Campo</span>
+                  </div>
+                </div>
+
+                <div class="py-2.5 flex items-center justify-between gap-2">
+                  <div>
+                    <p class="font-bold text-[#0A0A0A]">Transportadoras &amp; Rodoviários</p>
+                    <p class="text-[11px] text-[#6E6E6E]">Caminhões pesados, câmbio e diferencial</p>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-[11px] font-medium text-[#4A4A4A] hidden sm:inline">Trem de Força</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#0A0A0A] text-white font-semibold text-[11px]">✓ Oficina</span>
+                  </div>
+                </div>
+
+                <div class="py-2.5 flex items-center justify-between gap-2">
+                  <div>
+                    <p class="font-bold text-[#0A0A0A]">Locadoras &amp; Linha Leve Diesel</p>
+                    <p class="text-[11px] text-[#6E6E6E]">Picapes, freios, molas, elétrica e A/C</p>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-[11px] font-medium text-[#4A4A4A] hidden sm:inline">Frota Completa</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-black/10 text-[#0A0A0A] font-semibold text-[11px]">360º FLR</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-2 pt-3 border-t border-black/10 flex items-center justify-between gap-3">
+                <span class="text-[11px] font-medium text-[#4A4A4A]">
+                  ⚙ Revisão preventiva e corretiva sem terceirizar
+                </span>
+                <a
+                  href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.!%20Gostaria%20de%20atendimento%20para%20frota%20de%20Transportadora%20%2F%20Locadora%20%2F%20Terraplanagem."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-1.5 rounded-full bg-[#FE5502] hover:bg-[#E04800] text-white text-xs font-semibold transition-colors shrink-0"
+                >
+                  Orçar Frota →
+                </a>
+              </div>
+            </div>
+
+            <!-- BOTTOM HEADLINE & DESCRIPTION OVER PHOTO -->
+            <div class="relative z-10 pt-16 px-1 sm:px-2 pb-1">
+              <h3 class="text-3xl sm:text-4xl xl:text-[42px] font-bold tracking-[-0.03em] leading-[1.06] text-white">
+                Terraplanagem, Locadoras<br />&amp; Transportadoras.
+              </h3>
+              <p class="mt-3.5 text-white/85 font-body text-sm sm:text-[15px] leading-[1.5] max-w-[48ch]">
+                Centralize a manutenção de máquinas pesadas, caminhões e utilitários diesel. De motor, câmbio e diferencial a freios, molas, solda e ar-condicionado no mesmo galpão.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         NOSSA HISTÓRIA — SCROLL-DRIVEN TYPEWRITER MANIFESTO
+         ====================================================================== -->
+    <section id="historia" class="w-full bg-white py-28 sm:py-36 px-6 md:px-12">
+      <div class="max-w-[980px] mx-auto text-center">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F4F4F2] border border-[#DFDFDD] mb-7">
+          <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
+          <span class="text-xs font-semibold text-[#4A4A4A] uppercase tracking-wider">Nossa Trajetória · Role para ler</span>
+        </div>
+
+        <p
+          id="historia-scroll-text"
+          class="text-2xl sm:text-[32px] lg:text-[37px] text-[#3A3A3A] font-normal tracking-[-0.025em] leading-[1.35]"
+        >
+          Nascemos em 2022, em Mineiros do Tietê, <strong class="font-bold text-[#0A0A0A]">movidos pela paixão pelos motores a diesel e pelo compromisso com a verdade.</strong> Com Deus em primeiro lugar, superamos cada desafio para construir em Lençóis Paulista um centro de soluções completo, unindo <strong class="font-bold text-[#FE5502]">transparência, agilidade e preço justo</strong> para quem move o Brasil.
+        </p>
+
+        <div class="mt-10 max-w-xs mx-auto flex items-center gap-3">
+          <div class="flex-1 h-[2px] bg-[#DFDFDD] overflow-hidden">
+            <div id="historia-progress-fill" class="h-full bg-[#FE5502] transition-all duration-150" style="width: 0%"></div>
+          </div>
+          <span id="historia-progress-pct" class="tabular-nums text-xs font-bold text-[#FE5502] w-9 text-right">0%</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTINUOUS AUTO-SCROLLING CAROUSEL (5 REAL PHOTOS)
+         ====================================================================== -->
+    <section class="w-full bg-[#0A0A0A] border-t border-white/10" aria-label="Carrossel da Estrutura Real F.L.R. Mecânica">
+      
+      <div class="max-w-[1800px] mx-auto px-6 md:px-12 py-5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 bg-[#FE5502] inline-block"></span>
+          <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+            Estrutura Real F.L.R. · Sede em Lençóis Paulista &amp; Frota de Socorro em Campo
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="carousel-prev"
+            type="button"
+            aria-label="Foto anterior"
+            class="px-3.5 py-1.5 text-xs font-semibold text-white border border-white/20 hover:border-[#FE5502] hover:bg-[#FE5502] rounded-full transition-colors cursor-pointer"
+          >
+            ← Anterior
+          </button>
+          <button
+            id="carousel-toggle"
+            type="button"
+            class="px-3.5 py-1.5 text-xs font-semibold text-white/80 hover:text-white border border-white/20 rounded-full transition-colors cursor-pointer"
+          >
+            <span id="carousel-toggle-label">Pausar rolagem ❚❚</span>
+          </button>
+          <button
+            id="carousel-next"
+            type="button"
+            aria-label="Próxima foto"
+            class="px-3.5 py-1.5 text-xs font-semibold text-white border border-white/20 hover:border-[#FE5502] hover:bg-[#FE5502] rounded-full transition-colors cursor-pointer"
+          >
+            Próxima →
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-viewport">
+        <div id="gallery-carousel-track" class="carousel-track">
+          
+          <!-- Slide 1: Fachada F.L.R. -->
+          <button
+            type="button"
+            data-gallery-item
+            data-src="assets/img/galeria-fachada-flr.jpg"
+            data-caption="Sede F.L.R. Mecânica Diesel e Solda em Geral — Estrutura pronta para frotas leves e pesadas."
+            class="group relative h-[380px] sm:h-[460px] xl:h-[520px] w-[320px] sm:w-[440px] xl:w-[500px] shrink-0 overflow-hidden text-left border-r border-white/10 focus:outline-none cursor-pointer"
+          >
+            <img
+              src="assets/img/galeria-fachada-flr.jpg"
+              alt="Fachada da oficina F.L.R. Mecânica Diesel e Solda em Geral com veículos em manutenção"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FE5502]">01 · FACHADA &amp; RECEPÇÃO</span>
+                <p class="text-white text-sm sm:text-base font-semibold mt-0.5">Sede F.L.R. Mecânica Diesel e Solda em Geral</p>
+              </div>
+            </div>
+          </button>
+
+          <!-- Slide 2: Amplo Galpão Interno com Frotas -->
+          <button
+            type="button"
+            data-gallery-item
+            data-src="assets/img/galeria-patio-frota.jpg"
+            data-caption="Amplo galpão interno em Lençóis Paulista - SP atendendo simultaneamente frotas corporativas, picapes diesel e caminhões."
+            class="group relative h-[380px] sm:h-[460px] xl:h-[520px] w-[320px] sm:w-[440px] xl:w-[500px] shrink-0 overflow-hidden text-left border-r border-white/10 focus:outline-none cursor-pointer"
+          >
+            <img
+              src="assets/img/galeria-patio-frota.jpg"
+              alt="Interior amplo do galpão da F.L.R. Mecânica com dezenas de veículos de frota, caminhonetes e caminhão em revisão"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FE5502]">02 · CAPACIDADE DE PÁTIO</span>
+                <p class="text-white text-sm sm:text-base font-semibold mt-0.5">Galpão amplo para atendimento simultâneo de grandes frotas</p>
+              </div>
+            </div>
+          </button>
+
+          <!-- Slide 3: Equipe Técnica no Galpão -->
+          <button
+            type="button"
+            data-gallery-item
+            data-src="assets/img/galeria-equipe-oficina.jpg"
+            data-caption="Equipe própria multidisciplinar reunida no centro técnico em Lençóis Paulista - SP."
+            class="group relative h-[380px] sm:h-[460px] xl:h-[520px] w-[320px] sm:w-[440px] xl:w-[500px] shrink-0 overflow-hidden text-left border-r border-white/10 focus:outline-none cursor-pointer"
+          >
+            <img
+              src="assets/img/galeria-equipe-oficina.jpg"
+              alt="Equipe de mecânicos especialistas da F.L.R. reunida dentro da oficina"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FE5502]">03 · TIME PRÓPRIO</span>
+                <p class="text-white text-sm sm:text-base font-semibold mt-0.5">Especialistas em todas as áreas de manutenção</p>
+              </div>
+            </div>
+          </button>
+
+          <!-- Slide 4: Socorro em Campo -->
+          <button
+            type="button"
+            data-gallery-item
+            data-src="assets/img/galeria-socorro-campo.jpg"
+            data-caption="Unidade de resgate em campo prestando socorro direto em caminhão florestal na frente de trabalho."
+            class="group relative h-[380px] sm:h-[460px] xl:h-[520px] w-[320px] sm:w-[440px] xl:w-[500px] shrink-0 overflow-hidden text-left border-r border-white/10 focus:outline-none cursor-pointer"
+          >
+            <img
+              src="assets/img/galeria-socorro-campo.jpg"
+              alt="Veículo de atendimento em campo da F.L.R. Mecânica realizando manutenção em caminhão florestal na estrada de terra"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FE5502]">04 · RESGATE EM CAMPO</span>
+                <p class="text-white text-sm sm:text-base font-semibold mt-0.5">Socorro direto na lavoura, floresta e estrada</p>
+              </div>
+            </div>
+          </button>
+
+          <!-- Slide 5: Caminhão-Oficina Móvel -->
+          <button
+            type="button"
+            data-gallery-item
+            data-src="assets/img/galeria-caminhao-oficina.jpg"
+            data-caption="Interior do caminhão-oficina F.L.R. equipado com compressor Chiaperini, talha, solda e ferramentas pesadas."
+            class="group relative h-[380px] sm:h-[460px] xl:h-[520px] w-[320px] sm:w-[440px] xl:w-[500px] shrink-0 overflow-hidden text-left border-r border-white/10 focus:outline-none cursor-pointer"
+          >
+            <img
+              src="assets/img/galeria-caminhao-oficina.jpg"
+              alt="Interior do caminhão-oficina da F.L.R. equipado com compressor de ar, bancada, talha e equipamentos de solda"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex items-end p-6">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FE5502]">05 · OFICINA SOBRE RODAS</span>
+                <p class="text-white text-sm sm:text-base font-semibold mt-0.5">Caminhão equipado com compressor, solda e talha</p>
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DIFERENCIAL F.L.R. — MÁQUINA PARADA NÃO GERA LUCRO
+         Image: split-diferencial-flr.jpg (3rd attached image)
+         ====================================================================== -->
+    <section id="diferencial" class="w-full bg-white border-t border-[#DFDFDD]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 viewport-split-section">
+        
+        <!-- Left 8 Cols (66.6%): F.L.R. Mobile Rescue Pickup on the Highway -->
+        <div
+          data-reveal-img
+          class="lg:col-span-8 relative h-[360px] sm:h-[440px] lg:h-full bg-[#0A0A0A] overflow-hidden"
+        >
+          <img
+            src="assets/img/split-diferencial-flr.jpg"
+            alt="Técnico da F.L.R. Mecânica Diesel em deslocamento rápido com veículo de atendimento em campo"
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        <!-- Right 4 Cols (33.3%): Field Dispatch Conversion Column -->
+        <div
+          data-reveal="right"
+          class="lg:col-span-4 p-6 sm:p-9 xl:p-10 flex flex-col justify-between min-h-[500px] lg:min-h-0 lg:h-full border-t lg:border-t-0 lg:border-l border-[#DFDFDD]"
+        >
+          
+          <div>
+            <span class="text-[#8C8C8C] text-sm sm:text-base font-medium tracking-tight">
+              Diferencial F.L.R.
+            </span>
+          </div>
+
+          <div class="my-4">
+            <h2 class="text-[28px] sm:text-[34px] xl:text-[38px] font-bold tracking-[-0.035em] leading-[1.04] text-[#0A0A0A]">
+              Máquina parada<br />não gera lucro.
+            </h2>
+            <p class="mt-2.5 text-lg sm:text-[21px] font-medium tracking-[-0.025em] leading-[1.18] text-[#0A0A0A]">
+              Nossa equipe vai até<br />você agora mesmo.
+            </p>
+
+            <!-- Compact Interactive Field Dispatch Box -->
+            <form id="dispatch-form" class="mt-4 p-4 bg-[#F4F4F2] border border-[#DFDFDD] space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-[#0A0A0A] uppercase tracking-tight">Acionamento via WhatsApp</span>
+                <span class="text-[11px] font-semibold text-[#FE5502]">(19) 99791-1326</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div>
+                  <label for="dispatch-mode" class="block text-[10px] font-semibold text-[#4A4A4A] mb-0.5">Atendimento</label>
+                  <select id="dispatch-mode" class="w-full bg-white border border-[#DFDFDD] px-2.5 py-1.5 text-xs font-medium text-[#0A0A0A]">
+                    <option value="Socorro Imediato em Campo">Socorro em Campo</option>
+                    <option value="Manutenção na Oficina (Lençóis Paulista)">Serviço na Oficina</option>
+                    <option value="Orçamento de Frota / Preventiva">Orçamento de Frota</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="dispatch-equip" class="block text-[10px] font-semibold text-[#4A4A4A] mb-0.5">Equipamento</label>
+                  <select id="dispatch-equip" class="w-full bg-white border border-[#DFDFDD] px-2.5 py-1.5 text-xs font-medium text-[#0A0A0A]">
+                    <option value="Máquina Agrícola (Trator / Colheitadeira)">Máquina Agrícola</option>
+                    <option value="Linha Amarela / Florestal">Linha Amarela / Florestal</option>
+                    <option value="Caminhão / Frota Pesada">Caminhão Diesel Pesado</option>
+                    <option value="Linha Leve Diesel (Picape / Utilitário)">Linha Leve Diesel</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="dispatch-location" class="block text-[10px] font-semibold text-[#4A4A4A] mb-0.5">Sua Localização (Cidade, Usina, Fazenda ou Rodovia)</label>
+                <input
+                  id="dispatch-location"
+                  type="text"
+                  placeholder="Ex: Lençóis Paulista, Mineiros do Tietê, Fazenda..."
+                  class="w-full bg-white border border-[#DFDFDD] px-2.5 py-1.5 text-xs text-[#0A0A0A] placeholder:text-[#8C8C8C]"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-xs sm:text-sm py-2.5 px-4 rounded-full transition-colors cursor-pointer flex items-center justify-center gap-2"
+              >
+                <span>Chamar Equipe Técnica no WhatsApp</span>
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <p class="text-xs sm:text-[13px] text-[#6E6E6E] font-body leading-[1.42] max-w-[42ch]">
+              Esqueça a dor de cabeça com pranchas e transporte de máquinas pesadas. Acione nosso time técnico pelo WhatsApp, informe sua localização e receba suporte rápido direto na frente de serviço.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MONUMENTAL ORANGE FOOTER (#FE5502)
+       ======================================================================== -->
+  <footer class="w-full bg-[#FE5502] text-white pt-20 sm:pt-28 pb-10 overflow-hidden">
+    <div class="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-16 sm:pb-24">
+        
+        <div data-reveal="left" class="lg:col-span-7">
+          <img
+            src="assets/img/logo-flr.svg"
+            alt="FLR Mecânica Diesel e Solda em Geral"
+            class="w-full max-w-[680px] h-auto brightness-0 invert"
+          />
+        </div>
+
+        <div data-reveal="right" style="--reveal-delay: 140ms" class="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-8 sm:gap-12 text-white">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-white/75">Base &amp; Atendimento</p>
+            <p class="mt-2 text-base font-semibold">Lençóis Paulista - SP</p>
+            <p class="text-sm text-white/85 mt-0.5">Origem em Mineiros do Tietê · Atendemos onde for preciso</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-white/75">Plantão &amp; Orçamentos</p>
+            <a
+              href="https://wa.me/5519997911326"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-2 block text-xl font-bold hover:underline"
+            >
+              (19) 99791-1326
+            </a>
+            <p class="text-sm text-white/85 mt-0.5">Transparência, qualidade e agilidade</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/35 flex flex-col sm:flex-row items-center justify-between gap-6">
+        
+        <p class="text-sm sm:text-[15px] text-white/95 font-normal">
+          © 2026 FLR - Projeto de portfólio
+        </p>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="https://wa.me/5519997911326"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram F.L.R. Mecânica"
+            class="w-11 h-11 rounded-full border border-white/60 hover:border-white hover:bg-white hover:text-[#FE5502] transition-colors flex items-center justify-center"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a
+            href="https://wa.me/5519997911326?text=Ol%C3%A1%2C%20equipe%20F.L.R.%20Mec%C3%A2nica!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Oficial F.L.R. Mecânica (19) 99791-1326"
+            class="w-11 h-11 rounded-full border border-white/60 hover:border-white hover:bg-white hover:text-[#FE5502] transition-colors flex items-center justify-center"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+            </svg>
+          </a>
+        </div>
+
+        <a
+          href="#topo"
+          class="text-sm sm:text-[15px] text-white hover:underline font-medium inline-flex items-center gap-2"
+        >
+          <span>Voltar ao topo</span>
+          <span aria-hidden="true">↑</span>
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       TECHNICAL SPECIFICATION MODAL
+       ======================================================================== -->
+  <div
+    id="spec-modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    class="modal-backdrop fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+  >
+    <div class="modal-panel bg-white text-[#0A0A0A] w-full max-w-[640px] border border-[#DFDFDD] p-6 sm:p-10 relative shadow-2xl">
+      <div class="flex items-center justify-between border-b border-[#DFDFDD] pb-4">
+        <span id="modal-code" class="text-xs font-bold text-[#FE5502] tracking-wider uppercase">ESPECIFICAÇÃO F.L.R.</span>
+        <button
+          type="button"
+          data-close-modal
+          aria-label="Fechar detalhes técnicos"
+          class="text-sm font-semibold text-[#6E6E6E] hover:text-[#0A0A0A] px-2 py-1 cursor-pointer"
+        >
+          Fechar ✕
+        </button>
+      </div>
+
+      <h3 id="modal-title" class="mt-5 text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-[#0A0A0A]"></h3>
+      <p id="modal-subtitle" class="mt-2 text-sm sm:text-base font-semibold text-[#FE5502]"></p>
+      <p id="modal-desc" class="mt-4 text-sm sm:text-[15px] text-[#4A4A4A] font-body leading-relaxed"></p>
+
+      <div class="mt-6">
+        <p class="text-xs font-bold uppercase text-[#6E6E6E] mb-2">Escopo de Atendimento:</p>
+        <ul id="modal-list" class="border-t border-[#DFDFDD]"></ul>
+      </div>
+
+      <div class="mt-8 pt-5 border-t border-[#DFDFDD] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <span class="text-xs text-[#6E6E6E]">Lençóis Paulista - SP · Atendimento em Campo e Oficina</span>
+        <a
+          id="modal-cta"
+          href="https://wa.me/5519997911326"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-sm px-6 py-3 rounded-full text-center transition-colors"
+        >
+          Solicitar este Serviço no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GALLERY LIGHTBOX MODAL
+       ======================================================================== -->
+  <div
+    id="gallery-lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    class="modal-backdrop fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8"
+  >
+    <div class="max-w-5xl w-full relative">
+      <div class="flex items-center justify-between mb-3">
+        <p id="lightbox-caption" class="text-white text-sm sm:text-base font-medium"></p>
+        <button
+          type="button"
+          data-close-lightbox
+          class="text-white/80 hover:text-[#FE5502] text-sm font-semibold px-3 py-1 border border-white/20 rounded-full cursor-pointer"
+        >
+          Fechar ✕
+        </button>
+      </div>
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="w-full max-h-[80vh] object-contain bg-[#0A0A0A] border border-white/15"
+      />
+    </div>
+  </div>
+
+  <!-- Main Interactive & Motion Controller -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

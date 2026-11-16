@@ -1,0 +1,522 @@
+/* ==========================================================================
+   F.L.R. MECÂNICA DIESEL E SOLDA EM GERAL — Design System, Motion & Hover UI
+   Palette: #FE5502 (Orange) | #0A0A0A (Black) | #FFFFFF (White)
+   Zero Red Policy (#000 / #FFF / #FE5502 strictly enforced)
+   ========================================================================== */
+
+:root {
+  --flr-orange: #FE5502;
+  --flr-orange-hover: #E04800;
+  --flr-black: #0A0A0A;
+  --flr-white: #FFFFFF;
+  --flr-surface: #F5F5F3;
+  --flr-border: #DFDFDD;
+  --flr-muted: #6E6E6E;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-tech: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--flr-white);
+  color: var(--flr-black);
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Native 1:1 High-Clarity Video Rendering for Hero Section */
+.hero-video-crisp {
+  transform: none !important;
+  will-change: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  filter: url(#flr-sharp-video) contrast(1.06) saturate(1.06);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ==========================================================================
+   1. BIDIRECTIONAL ENTRANCE & EXIT ANIMATIONS (Sections, Text & Images)
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition:
+    opacity 0.72s var(--ease-out-expo),
+    transform 0.72s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+  transform: translate3d(-44px, 0, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(44px, 0, 0);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.93) translate3d(0, 24px, 0);
+}
+
+[data-reveal].is-inview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+[data-reveal].is-exited-top {
+  opacity: 0;
+  transform: translate3d(0, -32px, 0) scale(0.98);
+}
+
+[data-reveal].is-exited-bottom {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+}
+
+/* Image Frame Entrance & Exit */
+[data-reveal-img] {
+  clip-path: inset(6% 3% 6% 3%);
+  opacity: 0;
+  transition:
+    clip-path 0.9s var(--ease-out-expo),
+    opacity 0.6s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: clip-path, opacity;
+}
+
+[data-reveal-img] img {
+  transform: scale(1.1);
+  transition: transform 1.15s var(--ease-out-expo);
+}
+
+[data-reveal-img].is-inview {
+  clip-path: inset(0% 0% 0% 0%);
+  opacity: 1;
+}
+
+[data-reveal-img].is-inview img {
+  transform: scale(1.01);
+}
+
+[data-reveal-img].is-exited-top {
+  clip-path: inset(0% 0% 8% 0%);
+  opacity: 0.15;
+}
+
+[data-reveal-img].is-exited-top img {
+  transform: scale(1.06) translateY(-14px);
+}
+
+[data-reveal-img].is-exited-bottom {
+  clip-path: inset(8% 0% 0% 0%);
+  opacity: 0;
+}
+
+[data-reveal-img].is-exited-bottom img {
+  transform: scale(1.1) translateY(14px);
+}
+
+/* Cutout Machine Floating & Entrance (001 / 002 / 003) */
+[data-reveal-cutout] {
+  opacity: 0;
+  transform: translate3d(0, 48px, 0) scale(0.88);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.04));
+  transition:
+    opacity 0.85s var(--ease-out-expo),
+    transform 0.85s var(--ease-out-expo),
+    filter 0.5s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal-cutout].is-inview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: drop-shadow(0 24px 28px rgba(0, 0, 0, 0.12));
+}
+
+[data-reveal-cutout].is-exited-top {
+  opacity: 0;
+  transform: translate3d(0, -36px, 0) scale(0.92);
+}
+
+[data-reveal-cutout].is-exited-bottom {
+  opacity: 0;
+  transform: translate3d(0, 48px, 0) scale(0.88);
+}
+
+/* ==========================================================================
+   2. VIEWPORT-FITTING SPLIT SECTIONS & HOVER SERVICE BREAKDOWN
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  .viewport-split-section {
+    height: calc(100vh - 68px);
+    min-height: 540px;
+    max-height: 670px;
+  }
+}
+
+.vertical-editorial-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  user-select: none;
+  transition:
+    opacity 0.4s var(--ease-out-expo),
+    transform 0.5s var(--ease-out-expo),
+    color 0.35s ease;
+}
+
+@media (max-width: 1023px) {
+  .vertical-editorial-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    line-height: 1.05;
+  }
+}
+
+.editorial-spec-col {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--flr-white);
+  transition: background-color 0.4s var(--ease-out-expo);
+}
+
+.editorial-spec-col::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--flr-orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s var(--ease-out-expo);
+  z-index: 30;
+}
+
+.editorial-spec-col:hover::before,
+.editorial-spec-col.is-expanded::before {
+  transform: scaleX(1);
+}
+
+.editorial-rest-state {
+  transition:
+    opacity 0.35s var(--ease-out-expo),
+    transform 0.4s var(--ease-out-expo);
+}
+
+.editorial-spec-col:hover .editorial-rest-state,
+.editorial-spec-col.is-expanded .editorial-rest-state {
+  opacity: 0.05;
+  transform: translateX(-14px) scale(0.97);
+  pointer-events: none;
+}
+
+.editorial-hover-details {
+  position: absolute;
+  inset: 0;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.95) 65%,
+    rgba(255, 255, 255, 0.99) 100%
+  );
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 0.4s var(--ease-out-expo),
+    transform 0.4s var(--ease-out-expo);
+  z-index: 20;
+  overflow-y: auto;
+}
+
+@media (min-width: 1280px) {
+  .editorial-hover-details {
+    padding: 2rem 2.5rem;
+  }
+}
+
+.editorial-spec-col:hover .editorial-hover-details,
+.editorial-spec-col.is-expanded .editorial-hover-details {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
+}
+
+.service-detail-item {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity 0.4s var(--ease-out-expo),
+    transform 0.4s var(--ease-out-expo),
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.editorial-spec-col:hover .service-detail-item,
+.editorial-spec-col.is-expanded .service-detail-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.editorial-spec-col:hover .service-detail-item:nth-child(1),
+.editorial-spec-col.is-expanded .service-detail-item:nth-child(1) { transition-delay: 45ms; }
+.editorial-spec-col:hover .service-detail-item:nth-child(2),
+.editorial-spec-col.is-expanded .service-detail-item:nth-child(2) { transition-delay: 90ms; }
+.editorial-spec-col:hover .service-detail-item:nth-child(3),
+.editorial-spec-col.is-expanded .service-detail-item:nth-child(3) { transition-delay: 135ms; }
+.editorial-spec-col:hover .service-detail-item:nth-child(4),
+.editorial-spec-col.is-expanded .service-detail-item:nth-child(4) { transition-delay: 180ms; }
+.editorial-spec-col:hover .service-detail-item:nth-child(5),
+.editorial-spec-col.is-expanded .service-detail-item:nth-child(5) { transition-delay: 225ms; }
+
+.service-detail-item:hover {
+  background-color: #F7F7F5;
+  border-left-color: var(--flr-orange);
+}
+
+/* Synchronized Left Photo Reaction */
+.editorial-split-row:has(.editorial-spec-col:hover) .editorial-photo-wrap img,
+.editorial-split-row:has(.editorial-spec-col.is-expanded) .editorial-photo-wrap img {
+  transform: scale(1.05);
+  filter: contrast(1.06) brightness(0.92);
+}
+
+.editorial-split-row:has(.editorial-spec-col:hover) .editorial-photo-badge,
+.editorial-split-row:has(.editorial-spec-col.is-expanded) .editorial-photo-badge {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.editorial-photo-badge {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity 0.4s var(--ease-out-expo),
+    transform 0.4s var(--ease-out-expo);
+}
+
+/* ==========================================================================
+   3. SCROLL-DRIVEN TYPEWRITER / WORD REVEAL (#historia)
+   ========================================================================== */
+
+.scroll-write-word {
+  display: inline-block;
+  opacity: 0.14;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, color 0.18s ease;
+}
+
+.scroll-write-word.is-typed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-write-word.is-bold.is-typed {
+  color: #0A0A0A;
+  font-weight: 700;
+}
+
+.scroll-write-word.is-accent.is-typed {
+  color: #FE5502;
+  font-weight: 700;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.scroll-write-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.95em;
+  background-color: #FE5502;
+  vertical-align: -0.08em;
+  margin-left: 3px;
+  animation: cursorBlink 0.85s infinite;
+}
+
+/* ==========================================================================
+   4. CONTINUOUS AUTO-SCROLLING CAROUSEL (5 REAL PHOTOS + CONTROLS)
+   ========================================================================== */
+
+.carousel-viewport {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   5. DYNAMIC RESULTS / NUMBERS SECTION
+   ========================================================================== */
+
+.metric-card {
+  position: relative;
+  transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--flr-orange);
+  transform: translateY(-4px);
+}
+
+.metric-bar-fill {
+  width: 0%;
+  transition: width 1.3s var(--ease-out-expo);
+}
+
+/* ==========================================================================
+   6. HERO VIGNETTES, PILLAR CARDS & SCROLL UI
+   ========================================================================== */
+
+.hero-vignette {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.52) 38%,
+    rgba(0, 0, 0, 0.18) 68%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+}
+
+.hero-top-vignette {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.pillar-card {
+  position: relative;
+  transition: background-color 0.35s ease;
+}
+
+.pillar-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--flr-orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s var(--ease-out-expo);
+}
+
+.pillar-card:hover {
+  background-color: #FAFAFA;
+}
+
+.pillar-card:hover::after {
+  transform: scaleX(1);
+}
+
+.pillar-card .pillar-image {
+  transition: transform 0.55s var(--ease-out-expo);
+}
+
+.pillar-card:hover .pillar-image {
+  transform: translateY(-10px) scale(1.04);
+}
+
+@keyframes scrollLinePulse {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.scroll-line-animated {
+  animation: scrollLinePulse 2.4s var(--ease-in-out-tech) infinite;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--flr-orange);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FE5502;
+}
+
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-panel {
+  transform: translateY(16px);
+  transition: transform 0.25s var(--ease-out-expo);
+}
+
+.modal-backdrop.is-open .modal-panel {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-reveal],
+  [data-reveal-img],
+  [data-reveal-cutout],
+  .pillar-card .pillar-image,
+  .editorial-hover-details,
+  .service-detail-item,
+  .scroll-write-word {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
