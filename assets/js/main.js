@@ -71,6 +71,22 @@ const TECHNICAL_SPECS = {
     whatsappText:
       "Olá, equipe F.L.R.! Preciso de *Manutenção a Nível de Inspeção em Carreta / Conjunto* para liberação de via."
   },
+  linhaleve: {
+    code: "FROTAS LEVES & PASSEIO · 005",
+    title: "Mecânica Completa Linha Leve",
+    subtitle: "Carros de passeio e utilitários leves a álcool, gasolina e flex.",
+    description:
+      "Diagnóstico de precisão, injeção eletrônica e revisão 360º (preventiva e corretiva). Transparência e agilidade para garantir que o veículo da sua frota comercial ou do seu dia a dia nunca te deixe na mão.",
+    items: [
+      "Diagnóstico eletrônico por scanner e leitura de falhas da injeção",
+      "Limpeza e reparo de bicos injetores, corpo de borboleta, sensores e ignição",
+      "Revisão preventiva completa: óleo, filtros, correias, fluidos e check-list 360º",
+      "Freios, suspensão, direção, embreagem e arrefecimento",
+      "Elétrica, bateria, alternador, motor de partida e ar-condicionado"
+    ],
+    whatsappText:
+      "Olá, equipe F.L.R.! Gostaria de agendar *Mecânica Linha Leve* para um carro de passeio / utilitário."
+  },
   motores: {
     code: "ENGENHARIA MECÂNICA · TREM DE FORÇA",
     title: "Motores, Câmbio, Diferencial & Diagnóstico",
@@ -465,20 +481,20 @@ document.addEventListener("DOMContentLoaded", () => {
           "backdrop-blur-md",
           "border-b",
           "border-white/10",
-          "py-3.5",
-          "sm:py-4"
+          "py-2",
+          "sm:py-2.5"
         );
-        siteHeader.classList.remove("py-5", "sm:py-7");
+        siteHeader.classList.remove("py-3", "sm:py-4");
       } else {
         siteHeader.classList.remove(
           "bg-[#0A0A0A]/95",
           "backdrop-blur-md",
           "border-b",
           "border-white/10",
-          "py-3.5",
-          "sm:py-4"
+          "py-2",
+          "sm:py-2.5"
         );
-        siteHeader.classList.add("py-5", "sm:py-7");
+        siteHeader.classList.add("py-3", "sm:py-4");
       }
     }
 
