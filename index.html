@@ -68,6 +68,7 @@
         <a href="#resultados" class="hover:text-[#FE5502] transition-colors">Resultados</a>
         <a href="#setores" class="hover:text-[#FE5502] transition-colors">Setores</a>
         <a href="#historia" class="hover:text-[#FE5502] transition-colors">Nossa História</a>
+        <a href="#localizacao" class="hover:text-[#FE5502] transition-colors">Localização</a>
       </nav>
 
       <!-- Center / Left Official FLR Vector Logo -->
@@ -127,7 +128,8 @@
         <a href="#resultados" class="mobile-nav-link py-1.5 border-b border-white/10 hover:text-[#FE5502]">03. Resultados em Números</a>
         <a href="#setores" class="mobile-nav-link py-1.5 border-b border-white/10 hover:text-[#FE5502]">04. Setores Atendidos</a>
         <a href="#historia" class="mobile-nav-link py-1.5 border-b border-white/10 hover:text-[#FE5502]">05. Nossa História &amp; Galeria</a>
-        <a href="#diferencial" class="mobile-nav-link py-1.5 hover:text-[#FE5502]">06. Atendimento em Campo</a>
+        <a href="#diferencial" class="mobile-nav-link py-1.5 border-b border-white/10 hover:text-[#FE5502]">06. Atendimento em Campo</a>
+        <a href="#localizacao" class="mobile-nav-link py-1.5 hover:text-[#FE5502]">07. Localização &amp; Mapa</a>
         <div class="pt-4 border-t border-white/15 flex flex-col gap-3">
           <div class="flex items-center justify-between text-xs text-white/70">
             <span>Lençóis Paulista - SP e Região</span>
@@ -932,7 +934,7 @@
               </p>
               <h3 class="mt-1 sm:mt-2 text-sm sm:text-lg font-bold text-[#FE5502] leading-tight">Oficina Móvel Equipada</h3>
               <p class="mt-1.5 sm:mt-2 text-[11px] sm:text-sm text-white/70 font-body leading-snug sm:leading-relaxed">
-                Caminhão-oficina com compressor, talha, solda e picape rápida para diagnóstico.
+                Caminhão-oficina completamente equipado e picape rápida para diagnóstico.
               </p>
             </div>
             <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
@@ -1006,6 +1008,13 @@
                 class="px-4 py-2 text-xs font-semibold rounded-full border border-white/15 bg-white/5 text-white/75 hover:text-white transition-colors shrink-0 cursor-pointer"
               >
                 Caminhão / Frota
+              </button>
+              <button
+                type="button"
+                data-scenario-btn="linhaleve"
+                class="px-4 py-2 text-xs font-semibold rounded-full border border-white/15 bg-white/5 text-white/75 hover:text-white transition-colors shrink-0 cursor-pointer"
+              >
+                Carro Gasolina / Álcool / Flex
               </button>
             </div>
           </div>
@@ -1155,6 +1164,17 @@
                   <div class="flex items-center gap-2 shrink-0">
                     <span class="text-[11px] font-medium text-[#3A3A3A] hidden sm:inline">Frota Completa</span>
                     <span class="px-2.5 py-0.5 rounded-full bg-black/10 text-[#0A0A0A] font-semibold text-[10px] sm:text-[11px]">360º FLR</span>
+                  </div>
+                </div>
+
+                <div class="py-2 sm:py-2.5 flex items-center justify-between gap-2">
+                  <div>
+                    <p class="font-bold text-[#0A0A0A] text-xs">Frotas Leves &amp; Carros de Passeio</p>
+                    <p class="text-[10px] sm:text-[11px] text-[#4A4A4A]">Gasolina, álcool e flex · injeção e revisão</p>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-[11px] font-medium text-[#3A3A3A] hidden sm:inline">Linha Leve</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#FE5502]/15 text-[#D94600] font-bold text-[10px] sm:text-[11px]">✓ Flex</span>
                   </div>
                 </div>
               </div>
@@ -1375,7 +1395,7 @@
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FE5502]"></span>
                   05 · Oficina Sobre Rodas
                 </span>
-                <p class="text-white text-xs sm:text-sm font-semibold mt-0.5">Caminhão equipado com compressor, solda e talha</p>
+                <p class="text-white text-xs sm:text-sm font-semibold mt-0.5">Caminhão equipado com tudo para o seu atendimento</p>
               </div>
             </div>
           </button>
@@ -1458,6 +1478,7 @@
                     <option value="Linha Amarela / Florestal">Linha Amarela / Florestal</option>
                     <option value="Caminhão / Frota Pesada">Caminhão Diesel Pesado</option>
                     <option value="Linha Leve Diesel (Picape / Utilitário)">Linha Leve Diesel</option>
+                    <option value="Carro de Passeio / Utilitário Leve (Gasolina, Álcool ou Flex)">Carro Gasolina / Álcool / Flex</option>
                   </select>
                 </div>
               </div>
@@ -1487,6 +1508,80 @@
             </p>
           </div>
 
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         LOCALIZAÇÃO / MAPA — Onde Estamos
+         ====================================================================== -->
+    <section id="localizacao" class="w-full pb-10 sm:pb-16 px-4 sm:px-6 lg:px-10 bg-[#F4F4F2]">
+      <div class="max-w-[1800px] mx-auto rounded-[24px] sm:rounded-[28px] bg-white border border-[#DFDFDD] shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+
+        <!-- Info panel -->
+        <div data-reveal="left" class="lg:col-span-4 bg-[#0A0A0A] text-white p-6 sm:p-9 xl:p-12 flex flex-col justify-between gap-8">
+          <div>
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-semibold text-white/90">
+              <span class="w-2 h-2 rounded-full bg-[#FE5502] animate-pulse"></span>
+              Onde Estamos
+            </span>
+            <h2 class="mt-5 text-[30px] sm:text-[40px] xl:text-[46px] font-bold tracking-[-0.03em] leading-[1.04]">
+              Venha até a<br /><span class="text-[#FE5502]">F.L.R. Mecânica.</span>
+            </h2>
+            <p class="mt-4 text-sm sm:text-[15px] text-white/75 font-body leading-[1.5] max-w-[40ch]">
+              Galpão completo no Distrito Empresarial de Lençóis Paulista, com fácil acesso para caminhões, carretas, máquinas e carros de passeio.
+            </p>
+          </div>
+
+          <div class="rounded-[18px] bg-white/[0.06] border border-white/10 p-4 sm:p-5">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#FE5502]">Endereço</p>
+            <p class="mt-1.5 text-base sm:text-lg font-semibold leading-snug">
+              Rua Oceania, 160
+            </p>
+            <p class="text-sm text-white/75 leading-snug">
+              Distrito Empresarial Luiz Trecenti<br />Lençóis Paulista - SP
+            </p>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between gap-3 text-sm">
+              <span class="text-white/75">WhatsApp</span>
+              <a href="https://wa.me/5519997911326" target="_blank" rel="noopener noreferrer" class="font-semibold hover:text-[#FE5502] transition-colors">(19) 99791-1326</a>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Rua%20Oceania%2C%20160%20-%20Distrito%20Empresarial%20Luiz%20Trecenti%2C%20Len%C3%A7%C3%B3is%20Paulista%20-%20SP"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 bg-[#FE5502] hover:bg-[#E04800] text-white font-semibold text-sm px-5 py-3 rounded-full transition-colors text-center"
+            >
+              Como chegar (Google Maps) →
+            </a>
+            <a
+              href="https://waze.com/ul?q=Rua%20Oceania%2C%20160%2C%20Len%C3%A7%C3%B3is%20Paulista%20-%20SP&navigate=yes"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 border border-white/25 hover:border-white text-white font-semibold text-sm px-5 py-3 rounded-full transition-colors text-center"
+            >
+              Abrir no Waze
+            </a>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div data-reveal="right" class="lg:col-span-8 relative min-h-[340px] sm:min-h-[460px] lg:min-h-[560px] bg-[#EAEAE8]">
+          <iframe
+            title="Mapa — F.L.R. Mecânica Diesel e Solda em Geral, Rua Oceania, 160, Lençóis Paulista - SP"
+            src="https://www.google.com/maps?q=Rua%20Oceania%2C%20160%20-%20Distrito%20Empresarial%20Luiz%20Trecenti%2C%20Len%C3%A7%C3%B3is%20Paulista%20-%20SP&z=16&output=embed"
+            class="absolute inset-0 w-full h-full border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+          <div class="pointer-events-none absolute top-4 left-4 sm:top-6 sm:left-6 rounded-full bg-white/95 border border-[#DFDFDD] shadow-md px-4 py-2 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#FE5502]"></span>
+            <span class="text-xs font-semibold text-[#0A0A0A]">F.L.R. · Lençóis Paulista - SP</span>
+          </div>
         </div>
 
       </div>
@@ -1681,6 +1776,6 @@
   </div>
 
   <!-- Main Interactive & Motion Controller (Cache-busted) -->
-  <script src="assets/js/main.js?v=20261117b"></script>
+  <script src="assets/js/main.js?v=20261117c"></script>
 </body>
 </html>

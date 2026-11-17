@@ -12,7 +12,7 @@ const TECHNICAL_SPECS = {
     title: "Resgate e Atendimento em Campo",
     subtitle: "Oficina móvel completa direto na lavoura, floresta, usina, obra ou rodovia.",
     description:
-      "Evite custos altíssimos de prancha e dias de máquina parada aguardando remoção. Nossa frota de socorro conta com caminhão-oficina equipado com compressor industrial, talha, máquina de solda, bancada ferramental e scanner de diagnóstico eletrônico pesado.",
+      "Evite custos altíssimos de prancha e dias de máquina parada aguardando remoção. Nossa frota de socorro conta com caminhão-oficina equipado com com tudo para o seu atendimento",
     items: [
       "Diagnóstico computadorizado multimarcas direto na frente de trabalho",
       "Soldas pesadas estruturais e recuperação de implementos em campo",
@@ -134,7 +134,7 @@ const DOWNTIME_SCENARIOS = {
     tradHours: "3 a 5 dias de logística",
     flrHours: "Solda, hidráulica e motor in-loco",
     savingPct: "Zero custo de prancha pesada",
-    detail: "Caminhão-oficina leva compressor, solda pesada, talha e bancada direto à floresta."
+    detail: "Caminhão-oficina equipado com tudo vai direto à floresta."
   },
   frota: {
     label: "Caminhão Canavieiro / Rodoviário",
@@ -142,6 +142,13 @@ const DOWNTIME_SCENARIOS = {
     flrHours: "1 única parada 360º na F.L.R.",
     savingPct: "100% resolvido no mesmo galpão",
     detail: "Motor, câmbio, diferencial, freios, molas, elétrica e ar-condicionado integrados."
+  },
+  linhaleve: {
+    label: "Carro de Passeio / Utilitário Leve (Gasolina, Álcool e Flex)",
+    tradHours: "Troca de peças no \"chute\"",
+    flrHours: "Diagnóstico de precisão por scanner",
+    savingPct: "Revisão 360º sem gasto desnecessário",
+    detail: "Injeção eletrônica, preventiva e corretiva para carros a gasolina, álcool e flex da sua frota ou do dia a dia."
   }
 };
 
