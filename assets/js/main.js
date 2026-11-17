@@ -55,6 +55,22 @@ const TECHNICAL_SPECS = {
     whatsappText:
       "Olá, equipe F.L.R.! Quero solicitar manutenção para *Caminhão / Frota Diesel*."
   },
+  inspecao: {
+    code: "CONFORMIDADE & VIA · 004",
+    title: "Manutenções a Nível de Inspeção",
+    subtitle: "Inspeção e manutenção técnica em carretas para rodar em total conformidade.",
+    description:
+      "Inspeção e manutenção técnica em carretas para garantir que o conjunto esteja em conformidade e liberado para rodar na via sem travar a operação.",
+    items: [
+      "Revisão completa de freios pneumáticos, válvulas, cuícas, lonas, tambores e catracas",
+      "Inspeção e reparo de suspensão, feixes de molas, balanças, pinos, buchas e tensores",
+      "Cubos de roda, rolamentos, retentores e alinhamento de eixos de carretas e implementos",
+      "Chicote elétrico, sinalização rodoviária, quinta-roda, pino-rei e travas de segurança",
+      "Solda estrutural de chassi e adequação técnica para liberação em usinas, florestas e rodovias"
+    ],
+    whatsappText:
+      "Olá, equipe F.L.R.! Preciso de *Manutenção a Nível de Inspeção em Carreta / Conjunto* para liberação de via."
+  },
   motores: {
     code: "ENGENHARIA MECÂNICA · TREM DE FORÇA",
     title: "Motores, Câmbio, Diferencial & Diagnóstico",

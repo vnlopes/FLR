@@ -225,10 +225,10 @@
     </section>
 
     <!-- ======================================================================
-         SECTION 001 / 002 / 003 — ROUNDED PILLAR CARDS WITH FLOATING WIDGETS
+         SECTION 001 / 002 / 003 / 004 — 2x2 GRID ROUNDED PILLAR CARDS
          ====================================================================== -->
     <section id="servicos" class="w-full bg-[#F4F4F2] py-10 sm:py-16 px-4 sm:px-6 lg:px-10">
-      <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-7">
+      <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
         
         <!-- PILLAR 001 -->
         <article class="pillar-card rounded-[24px] sm:rounded-[28px] bg-white border border-[#DFDFDD] p-5 sm:p-7 xl:p-8 flex flex-col justify-between sm:min-h-[580px] xl:min-h-[640px] shadow-sm">
@@ -364,6 +364,52 @@
             </h2>
             <p class="mt-2.5 text-xs sm:text-[15px] text-[#6E6E6E] font-body leading-[1.45]">
               Solução de ponta a ponta para transportadoras, locadoras e rodoviários. De motores, câmbio e diferencial até elétrica, freios e climatização em um único lugar.
+            </p>
+          </div>
+        </article>
+
+        <!-- PILLAR 004 -->
+        <article class="pillar-card rounded-[24px] sm:rounded-[28px] bg-white border border-[#DFDFDD] p-5 sm:p-7 xl:p-8 flex flex-col justify-between sm:min-h-[580px] xl:min-h-[640px] shadow-sm">
+          <div data-reveal style="--reveal-delay: 240ms" class="rounded-[18px] bg-[#F6F6F4] border border-[#E5E5E3] p-3.5 sm:p-4 flex items-center justify-between gap-2">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold text-[#0A0A0A]">
+              <span class="w-2 h-2 rounded-full bg-[#FE5502]"></span>
+              Frente #004 · Conformidade &amp; Via
+            </span>
+            <button
+              type="button"
+              data-spec-trigger="inspecao"
+              class="px-3 py-1 rounded-full bg-white border border-[#DFDFDD] hover:border-[#FE5502] text-[11px] font-bold text-[#FE5502] transition-colors cursor-pointer"
+            >
+              ✓ Ficha técnica
+            </button>
+          </div>
+
+          <div
+            data-reveal-cutout
+            style="--reveal-delay: 300ms"
+            class="my-5 sm:my-6 flex items-center justify-center h-[210px] sm:h-[300px]"
+          >
+            <img
+              src="assets/img/card-inspecao.png"
+              alt="Especialista F.L.R. em frente ao caminhão pesado — Manutenções a Nível de Inspeção"
+              class="pillar-image max-h-full w-auto object-contain"
+            />
+          </div>
+
+          <div data-reveal style="--reveal-delay: 360ms">
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="px-3 py-1 rounded-full bg-[#F4F4F2] text-[#0A0A0A] text-[11px] font-semibold">
+                <span class="text-[#FE5502]">✦</span> Carretas &amp; Conjuntos
+              </span>
+              <span class="px-3 py-1 rounded-full bg-[#F4F4F2] text-[#4A4A4A] text-[11px] font-medium">
+                Liberado para Rodar
+              </span>
+            </div>
+            <h2 class="text-[24px] sm:text-[30px] font-bold tracking-[-0.03em] leading-[1.08] text-[#0A0A0A]">
+              Manutenções a Nível<br />de Inspeção
+            </h2>
+            <p class="mt-2.5 text-xs sm:text-[15px] text-[#6E6E6E] font-body leading-[1.45]">
+              Inspeção e manutenção técnica em carretas para garantir que o conjunto esteja em conformidade e liberado para rodar na via sem travar a operação.
             </p>
           </div>
         </article>
@@ -1586,6 +1632,6 @@
   </div>
 
   <!-- Main Interactive & Motion Controller (Cache-busted) -->
-  <script src="assets/js/main.js?v=20261116c"></script>
+  <script src="assets/js/main.js?v=20261117a"></script>
 </body>
 </html>
